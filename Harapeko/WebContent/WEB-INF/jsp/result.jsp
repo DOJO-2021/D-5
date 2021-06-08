@@ -16,60 +16,43 @@
           <label><c:out value="${dish.image}">
             </label>
         </td>
-       </tr>
+      </tr>
+</table>
+<table>
 	  <tr>
+	   <th>食材</th>
         <td>
-         <label>食材：<c:out value="${dish.food}"> //for文を使った訂正
-          </label>
-        </td>
-       </tr>
-      <tr>
-        <td>
-          <label>ジャンル：<c:out value="${dish.genre}">
-          </label>
-        </td>
-        <td>
-          <label>住所<br><input type="text" name="ADDRESS" value="${e.address}">
+         <label><c:out value="${dish.food}"> //for文を使った訂正が必要。
           </label>
         </td>
       </tr>
       <tr>
+       <th>ジャンル</th>
         <td>
-          <label>電話番号<br><input type="text" name="PHONE" value="${e.phone}">
+          <label><c:out value="${dish.genre}">
           </label>
         </td>
+        <th>カロリー</th>
         <td>
-          <label>FAX番号<br><input type="text" name="FAX" value="${e.fax}">
+          <label><c:out value="${dish.cal}">
           </label>
         </td>
-        </tr>
-        <tr>
+      </tr>
+      <tr>
+       <th>難易度</th>
         <td>
-          <label> Email<br><input type="text" name="EMAIL" value="${e.email}">
+          <label><c:out value="${dish.difficulty}">
           </label>
         </td>
-        <td>
-          <label>備考<br><input type="text" name="REMARKS" value="${e.remarks}">
+        <th>作り方URL</th>
+         <td>
+          <label><c:out value="${dish.url}">
           </label>
-        </td>
-        </tr>
- </table>
-
-
-
-
-<h3>ジャンル：<c:out value="${dish.genre}">
-<h3>カロリー：<c:out value="${dish.cal}"</h3>
-<h3>難易度：<c:out value="${dish.difficulty}"</h3>
-<h3>作り方URL：<c:out value="${dish.url}"</h3>
+         </td>
+      </tr>
+</table>
+<button>再提案</button>
 <a href="/Harapeko/MainServlet">メインへ戻る</a>
-
-
-
-
-
-
-
 </main>
 
 <jsp:include page="/WEB-INF/jsp/footer.jsp"/>
