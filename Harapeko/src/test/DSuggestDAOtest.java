@@ -9,12 +9,12 @@ public class DSuggestDAOtest {
 
 	public static void main(String[] args) {
 		DSuggestDAO dao = new DSuggestDAO();
-		System.out.println("---------- select()‚ÌƒeƒXƒg ----------");
+		System.out.println("---------- select()ï¿½Ìƒeï¿½Xï¿½g ----------");
 	List<Dish> dishList = dao.select();
 	for (Dish dish:dishList) {
-		System.out.println("IDF" + dish.getId());
-		System.out.println("NameF" + dish.getName());
-		System.out.println("PathF" + dish.getPath());
+		System.out.println("ID" + dish.getId());
+		System.out.println("Name" + dish.getName());
+		System.out.println("Path" + dish.getPath());
 		System.out.println();
 	}
 }

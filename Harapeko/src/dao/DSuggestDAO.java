@@ -12,31 +12,31 @@ import model.Dish;
 
 
 public class DSuggestDAO {
-	// ˆø”param‚ÅŒŸõ€–Ú‚ğw’è‚µAŒŸõŒ‹‰Ê‚ÌƒŠƒXƒg‚ğ•Ô‚·SELECTƒƒ\ƒbƒh
+	// ï¿½ï¿½ï¿½ï¿½paramï¿½ÅŒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú‚ï¿½ï¿½wï¿½è‚µï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê‚Ìƒï¿½ï¿½Xï¿½gï¿½ï¿½Ô‚ï¿½SELECTï¿½ï¿½ï¿½\ï¿½bï¿½h
 	public List<Dish> select() {
 		Connection conn = null;
-		//String s = g•¶š—ñh;
+		//String s = ï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½h;
 
-		List<Dish> dishList = new ArrayList<Dish>();		//ArrayList‚Å‚à‰Â”\BBcŒ^‚ÌƒŠƒXƒg•Û‘¶
+		List<Dish> dishList = new ArrayList<Dish>();		//ArrayListï¿½Å‚ï¿½ï¿½Â”\ï¿½BBcï¿½^ï¿½Ìƒï¿½ï¿½Xï¿½gï¿½Û‘ï¿½
 
 		try {
-			// JDBCƒhƒ‰ƒCƒo‚ğ“Ç‚İ‚Ş
+			// JDBCï¿½hï¿½ï¿½ï¿½Cï¿½oï¿½ï¿½Ç‚İï¿½ï¿½ï¿½
 			Class.forName("org.h2.Driver");
 
-			// ƒf[ƒ^ƒx[ƒX‚ÉÚ‘±‚·‚é
+			// ï¿½fï¿½[ï¿½^ï¿½xï¿½[ï¿½Xï¿½ÉÚ‘ï¿½ï¿½ï¿½ï¿½ï¿½
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/D-5/data", "sa", "sa");
 
-			// SQL•¶‚ğ€”õ‚·‚é@d—vš@H‚ğAND@OR‚É‚à“K—p‚·‚é‚©
+			// SQLï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½dï¿½vï¿½ï¿½ï¿½@ï¿½Hï¿½ï¿½ANDï¿½@ORï¿½É‚ï¿½ï¿½Kï¿½pï¿½ï¿½ï¿½é‚©
 			//if (aaaa.getKensaku() == "AND") {ptst.setstring(3,getKensaku)
 
-			//‘Sƒe[ƒuƒ‹æ“¾AğŒ
+			//ï¿½Sï¿½eï¿½[ï¿½uï¿½ï¿½ï¿½æ“¾ï¿½Aï¿½ï¿½ï¿½ï¿½
 			String sql = "Select distinct md.dish_id,md.dish_name,md.img_path,md.dish_genre,md.difficulty,md.cal,md.url"
-					+ "from ( dish_details as dd INNER JOIN m_dish as md  using(dish_id));"
+					+ " from ( dish_details as dd INNER JOIN m_dish as md  using(dish_id));"
 					+ "inner join m_food as mf using(food_id);";
-			//where cal<? and
+			//where CAL <= ? and DISH_GENRE = ? and DIFFICULTY = ? and FOOD_NAME = ?;
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			// SQL•¶‚ğŠ®¬‚³‚¹‚é
+			// SQLï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 /*
 
 				pStmt.setString(1, "%" + src.getSearch1() + "%");
@@ -50,11 +50,11 @@ public class DSuggestDAO {
 				pStmt.setString(5, "%" + src.getSearch1() + "%");
 */
 
-			// SQL•¶‚ğÀs‚µAŒ‹‰Ê•\‚ğæ“¾‚·‚é
+			// SQLï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Ê•\ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½
 			ResultSet rs = pStmt.executeQuery();
 
-			// Œ‹‰Ê•\‚ğƒRƒŒƒNƒVƒ‡ƒ“‚ÉƒRƒs[‚·‚é
-			while (rs.next()) {				//Next‚ÍŸ‚Ìƒf[ƒ^‚¾‚©‚çAŸ‚Ìƒf[ƒ^‚ª‚ ‚éŒÀ‚è
+			// ï¿½ï¿½ï¿½Ê•\ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½Nï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ÉƒRï¿½sï¿½[ï¿½ï¿½ï¿½ï¿½
+			while (rs.next()) {				//Nextï¿½Íï¿½ï¿½Ìƒfï¿½[ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Ìƒfï¿½[ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				Dish card = new Dish(
 				rs.getString("ID"),
 				rs.getString("NAME"),
@@ -64,11 +64,11 @@ public class DSuggestDAO {
 				rs.getString("DIFF"),
 				rs.getString("URL")
 				);
-				dishList.add(card);		//63s–Ú‚ÉSearchServe‚É‘—‚ç‚ê‚é
+				dishList.add(card);		//63ï¿½sï¿½Ú‚ï¿½SearchServeï¿½É‘ï¿½ï¿½ï¿½ï¿½ï¿½
 			}
 		}
 		catch (SQLException e) {
-			e.printStackTrace();			//cardList=null‚Ìê‡console‚É—áŠO‚ğo‚·B
+			e.printStackTrace();			//cardList=nullï¿½Ìê‡consoleï¿½É—ï¿½Oï¿½ï¿½ï¿½oï¿½ï¿½ï¿½B
 			dishList = null;
 		}
 		catch (ClassNotFoundException e) {
@@ -76,7 +76,7 @@ public class DSuggestDAO {
 			dishList = null;
 		}
 		finally {
-			// ƒf[ƒ^ƒx[ƒX‚ğØ’f
+			// ï¿½fï¿½[ï¿½^ï¿½xï¿½[ï¿½Xï¿½ï¿½Ø’f
 			if (conn != null) {
 				try {
 					conn.close();
@@ -88,7 +88,7 @@ public class DSuggestDAO {
 			}
 		}
 
-		// Œ‹‰Ê‚ğ•Ô‚· search_Servlet.java‚ÅŒŸõŒ‹‰Ê‚ğƒŠƒNƒGƒXƒgƒXƒR[ƒv‚ÉŠi”[‚·‚é
+		// ï¿½ï¿½ï¿½Ê‚ï¿½Ô‚ï¿½ search_Servlet.javaï¿½ÅŒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê‚ï¿½ï¿½ï¿½ï¿½Nï¿½Gï¿½Xï¿½gï¿½Xï¿½Rï¿½[ï¿½vï¿½ÉŠiï¿½[ï¿½ï¿½ï¿½ï¿½
 		return dishList;
 	}
 
