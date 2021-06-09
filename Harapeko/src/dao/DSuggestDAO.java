@@ -12,42 +12,38 @@ import model.Dish;
 
 
 public class DSuggestDAO {
-	// ����param�Ō������ڂ��w�肵�A�������ʂ̃��X�g��Ԃ�SELECT���\�b�h
-	public List<Dish> select() {
+	public List<Dish> select(Dish dish,String food) {
 		Connection conn = null;
-		//String s = �g������h;
 
-		List<Dish> dishList = new ArrayList<Dish>();		//ArrayList�ł��\�BBc�^�̃��X�g�ۑ�
+		List<Dish> dishList = new ArrayList<Dish>();
 
 		try {
-			// JDBC�h���C�o��ǂݍ���
 			Class.forName("org.h2.Driver");
 
-			// �f�[�^�x�[�X�ɐڑ�����
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-5/data", "sa", "sa");
 
-			// SQL������������@�d�v���@�H��AND�@OR�ɂ��K�p���邩
-			//if (aaaa.getKensaku() == "AND") {ptst.setstring(3,getKensaku)
-
-			//�S�e�[�u���擾�A����
+			//SQL文
 			String sql = "select distinct md.dish_id, md.dish_name, md.img_path, md.dish_genre, md.difficulty, md.cal, md.url from dish_details as dd, m_dish md, m_food mf"
-					+ " where dd.dish_id = md.dish_id AND dd.food_id = mf.food_id;";
-			//where CAL <= ? and DISH_GENRE = ? and DIFFICULTY = ? and FOOD_NAME = ?;
+					+ " where dd.dish_id = md.dish_id AND dd.food_id = mf.food_id"
+					+ " and md.CAL <= ? and md.DISH_GENRE like ? and md.DIFFICULTY like ? and mf.food_name like ?;";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			// SQL��������������
-/*
+			// SQL完成させる "%"+ + "%"
 
-				pStmt.setString(1, "%" + src.getSearch1() + "%");
+				if(dish.getCal()==0){
+					pStmt.setInt(1, 100000);
+				}
+				else {
+					pStmt.setInt(1, dish.getCal());
+				}
 
-				pStmt.setString(2, "%" + src.getSearch2() + "%");
+				pStmt.setString(2, "%"+  dish.getGenre() + "%");
 
-				pStmt.setString(3, "%" + src.getSearch1() + "%");
+				pStmt.setString(3,  "%"+ dish.getDiff() + "%");
 
-				pStmt.setString(4, "%" + src.getSearch2() + "%");
+				pStmt.setString(4, "%"+ food + "%") ;
 
-				pStmt.setString(5, "%" + src.getSearch1() + "%");
-*/
+
 
 			// SQL�������s���A���ʕ\���擾����
 			ResultSet rs = pStmt.executeQuery();
