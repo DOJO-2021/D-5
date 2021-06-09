@@ -21,8 +21,8 @@ public class MainSrvlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//おすすめ食材を選ぶ
 		FSuggestDAO FDao = new FSuggestDAO();
-		//List<Food> foodList = FDao.select(new Food("",""));
-		/Food recommend = foodList.get((int)(Math.random() * foodList.size()));
+		List<Food> foodList = FDao.select(new Food("",""));
+		Food recommend = foodList.get((int)(Math.random() * foodList.size()));
 		request.setAttribute("recomend", recommend.getName() );
 
 
