@@ -12,7 +12,7 @@
 
 	<div class="recommend">
 		<p>今日のおすすめ食材は</p>
-		<p>${food.name}</p>
+		<p>${recomend}</p>
 	</div>
 
 	<div class="peko">
