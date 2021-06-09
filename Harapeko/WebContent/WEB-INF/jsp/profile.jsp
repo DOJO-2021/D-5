@@ -3,6 +3,12 @@
 
 <main>
 
+   <p><a href="/Harapeko/MainServlet">メインへ戻る</a></p>
+	<h1>はらペコーぬは何者？</h1>
+
+    <div><img src="/Harapeko/images/profile.jpg" alt="キャラクター紹介"></div>
+
+
 </main>
 
 <jsp:include page="/WEB-INF/jsp/footer.jsp"/>html>
