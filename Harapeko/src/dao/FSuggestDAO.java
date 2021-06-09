@@ -12,7 +12,7 @@ import model.Food;
 
 public class FSuggestDAO {
 
-	public List<Food> select() {
+	public List<Food> select(Food foods) {
 		Connection conn = null;
 		List<Food> foodList = new ArrayList<Food>();
 
