@@ -9,11 +9,11 @@
 <table>
       <tr>
         <td>
-          <label>料理名：<c:out value="${dish.dish}">
+          <label>料理名：<c:out value="${dish.name}">
           </label>
         </td>
         <td>
-          <label><c:out value="${dish.image}">
+          <label><c:out value="${dish.path}">
             </label>
         </td>
       </tr>
@@ -22,7 +22,7 @@
 	  <tr>
 	   <th>食材</th>
         <td>
-         <label><c:out value="${dish.food}"> //for文を使った訂正が必要。
+         <label><c:out value="${dish.foodList}"> //for文を使った訂正が必要。
           </label>
         </td>
       </tr>
@@ -41,7 +41,7 @@
       <tr>
        <th>難易度</th>
         <td>
-          <label><c:out value="${dish.difficulty}">
+          <label><c:out value="${dish.diff}">
           </label>
         </td>
         <th>作り方URL</th>
