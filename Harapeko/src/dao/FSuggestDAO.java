@@ -24,7 +24,7 @@ public class FSuggestDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-5/data", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "selec * from m_food";
+			String sql = "select * from m_food";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 
