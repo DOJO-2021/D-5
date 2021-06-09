@@ -14,7 +14,7 @@ import dao.FSuggestDAO;
 import model.Food;
 
 @WebServlet("/MainSrvlet")
-public class MainSrvlet extends HttpServlet {
+public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
@@ -33,8 +33,10 @@ public class MainSrvlet extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+
+		// 条件入力ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/Harapeko/SuggestServlet");
+		dispatcher.forward(request, response);
 	}
 
 }
