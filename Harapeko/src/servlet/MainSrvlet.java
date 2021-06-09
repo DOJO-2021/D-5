@@ -22,7 +22,8 @@ public class MainSrvlet extends HttpServlet {
 		//おすすめ食材を選ぶ
 		FSuggestDAO FDao = new FSuggestDAO();
 		List<Food> foodList = FDao.select(new Food("",""));
-		Math.random(foodList.size());
+		Food recommend = foodList.get((int)(Math.random() * foodList.size()));
+		request.setAttribute("recomend", recommend.getName() );
 
 
 		// メインページにフォワードする
