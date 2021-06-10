@@ -19,24 +19,15 @@ public class MainServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		//おすすめ食材を選ぶ
 		FSuggestDAO FDao = new FSuggestDAO();
 		List<Food> foodList = FDao.select(new Food("",""));
 		Food recommend = foodList.get((int)(Math.random() * foodList.size()));
 		request.setAttribute("recomend", recommend.getName() );
 
-
 		// メインページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
 		dispatcher.forward(request, response);
 	}
-
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		// 条件入力ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/Harapeko/SuggestServlet");
-		dispatcher.forward(request, response);
-	}
-
 }
