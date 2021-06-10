@@ -3,6 +3,7 @@
 <jsp:include page="/WEB-INF/jsp/header.jsp"/>
 
 <main>
+<div class="wrapper">
 	<h1 class="heading">メインメニュー</h1>
 
 	<div class="dishsuggest">
@@ -19,5 +20,6 @@
 	<div class="peko">
 		<img alt="はらペコーぬ" src="">
 	</div>
+</div>
 </main>
 <jsp:include page="/WEB-INF/jsp/footer.jsp"/>

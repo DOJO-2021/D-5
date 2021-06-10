@@ -3,7 +3,7 @@
 <jsp:include page="/WEB-INF/jsp/header.jsp"/>
 <script type="text/javascript" src="common.js"></script>
 <main>
-
+<div class="wrapper">
 <a href="/Harapeko/MainServlet">メインへ戻る</a>
 <h1>どんな気分？</h1>
 
@@ -198,7 +198,7 @@
 <input type="submit"  value="決定" >
 </form>
 </div>
-
+</div>
 </main>
 
 <jsp:include page="/WEB-INF/jsp/footer.jsp"/>
