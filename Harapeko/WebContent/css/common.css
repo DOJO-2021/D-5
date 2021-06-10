@@ -1,1 +1,49 @@
 @charset "UTF-8";
+
+
+/* 真ん中にそろえる */
+.wrapper {
+  margin: 0 auto 0 auto;	/* 中央揃え */
+  width: 700px;			/* 幅を固定 */
+}
+
+
+
+/* メニューなどのページタイトル */
+h2 {
+  background: #dfefff;
+  box-shadow: 0px 0px 0px 5px #dfefff;
+  border: dashed 1px #96c2fe;
+  padding: 0.2em 0.5em;
+  color: #f5d4af;
+}
+
+
+
+
+/* 右下にコピーライト */
+.footer {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+}
+
+
+
+/* メニューに戻るの色 */
+a:link {
+  color: #BF00FF;
+  text-decoration: none;
+}
+a:visited {
+  color: #BF00FF;
+  text-decoration: none;
+}
+a:hover {
+  color: hotpink;
+  text-decoration: none;
+}
+a:active {
+  color:skyblue;
+  text-decoration: none;
+}
