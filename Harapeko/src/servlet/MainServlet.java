@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.FSuggestDAO;
 import model.Food;
 
-@WebServlet("/MainSrvlet")
+@WebServlet("/MainServlet")
 public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -22,7 +22,7 @@ public class MainServlet extends HttpServlet {
 
 		//おすすめ食材を選ぶ
 		FSuggestDAO FDao = new FSuggestDAO();
-		List<Food> foodList = FDao.select(new Food("",""));
+		List<Food> foodList = FDao.select();
 		Food recommend = foodList.get((int)(Math.random() * foodList.size()));
 		request.setAttribute("recomend", recommend.getName() );
 
@@ -30,4 +30,13 @@ public class MainServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
 		dispatcher.forward(request, response);
 	}
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		// 条件入力ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/SuggestServlet");
+		dispatcher.forward(request, response);
+	}
+
 }

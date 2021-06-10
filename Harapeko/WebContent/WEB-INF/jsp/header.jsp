@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>はらペコ。</title>
-	<link rel="stylesheet" href="/simpleBC/css/style.css">
+	<link rel="stylesheet" href="/Harapeko/css/common.css">
 </head>
 <body>
 	<div class="wrapper">
