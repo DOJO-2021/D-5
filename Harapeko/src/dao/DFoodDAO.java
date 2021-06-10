@@ -9,12 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Dish;
+import model.Food;
 
 public class DFoodDAO {
-	public List<Dish> select(Dish dish,String food) {
+	public List<Food> select2(Dish dish) {
 		Connection conn = null;
 
-		List<Dish> foodList2 = new ArrayList<Dish>();
+		List<Food> foodList2 = new ArrayList<Food>();
 
 		try {
 			Class.forName("org.h2.Driver");
@@ -22,47 +23,33 @@ public class DFoodDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-5/data", "sa", "sa");
 
 			//SQL文 料理IDで検索してSelectはFood_name
-			String sql = "select mf.food_name from dish_details as dd, m_dish md, m_food mf"
-					+ " where dd.dish_id = md.dish_id AND dd.food_id = mf.food_id"
-					+ " and mf.dish_id=?;";
+			String sql = "SELECT mf.food_name,mf.food_id"
+					+ " FROM dish_details AS dd, m_dish AS md, m_food AS mf"
+					+ " WHERE md.dish_id = ? AND dd.dish_id = md.dish_id AND dd.food_id = mf.food_id;";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL完成させる
 
-				if(dish.getCal()==0){
-					pStmt.setInt(1, 100000);
-				}
-				else {
-					pStmt.setInt(1, dish.getCal());
-				}
+				pStmt.setString(1, dish.getId());
 
-				pStmt.setString(2, "%"+  dish.getGenre() + "%");
+				//pStmt.setString(2, "%"+  dish.getGenre() + "%");
 
-				pStmt.setString(3,  "%"+ dish.getDiff() + "%");
-
-				pStmt.setString(4, "%"+ food + "%") ;
+				//pStmt.setString(3,  "%"+ dish.getDiff() + "%");
 
 
-
-			// SQL�������s���A���ʕ\���擾����
 			ResultSet rs = pStmt.executeQuery();
 
-			// ���ʕ\���R���N�V�����ɃR�s�[����
-			while (rs.next()) {				//Next�͎��̃f�[�^������A���̃f�[�^���������
-				Dish card = new Dish(
-				rs.getString("dish_ID"),
-				rs.getString("dish_name"),
-				rs.getString("img_path"),
-				rs.getString("dish_genre"),
-				rs.getInt("cal"),
-				rs.getString("difficulty"),
-				rs.getString("url")
+
+			while (rs.next()) {
+				Food card = new Food(
+				rs.getString("food_id"), //foodid
+				rs.getString("food_name")
 				);
-				foodList2.add(card);		//63�s�ڂ�SearchServe�ɑ�����
+				foodList2.add(card);
 			}
 		}
 		catch (SQLException e) {
-			e.printStackTrace();			//cardList=null�̏ꍇconsole�ɗ�O���o���B
+			e.printStackTrace();
 			foodList2 = null;
 		}
 		catch (ClassNotFoundException e) {
@@ -81,8 +68,6 @@ public class DFoodDAO {
 				}
 			}
 		}
-
-		// ���ʂ�Ԃ� search_Servlet.java�Ō������ʂ����N�G�X�g�X�R�[�v�Ɋi�[����
 		return foodList2;
 	}
 
