@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<link rel="styleSheet" href="/Harapeko/css/common.css">
 <jsp:include page="/WEB-INF/jsp/header.jsp"/>
 
 <main>
-
+<div class="wrapper">
 <a href="/Harapeko/SuggestServlet">前の画面に戻る</a>
 <h1>今日のメニューはこれだ！</h1>
 
@@ -72,6 +73,7 @@
 </div>
 <button>再提案</button>
 <a href="/Harapeko/MainServlet">メインへ戻る</a>
+</div>
 </main>
 
 <jsp:include page="/WEB-INF/jsp/footer.jsp"/>
