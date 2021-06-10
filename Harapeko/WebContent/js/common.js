@@ -1,6 +1,6 @@
 function check(){
 
-	if(window.confirm('送信してよろしいですか？')){ // 確認ダイアログを表示
+	if(window.confirm('この条件でよろしいですか？')){ // 確認ダイアログを表示
 
 		return true; // 「OK」時は送信を実行
 

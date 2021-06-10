@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:include page="/WEB-INF/jsp/header.jsp"/>
-
+<script type="text/javascript" src="common.js"></script>
 <main>
 
 <a href="/Harapeko/MainServlet">メインへ戻る</a>
@@ -32,12 +32,15 @@
 <!--//1行あたり２つの食材を並べる。  -->
 <!--//行を追加する場合、<tr><td></td></tr>を追加 -->
           <table>
-           <tr style="border:none;">
-            <td style="border:none;"><input type="radio" name="food" value="pork" checked>豚肉</td>
-            <td style="border:none;"><input type="radio" name="food" value="chicken" >鶏肉</td>
-           </tr>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="beef" >牛肉</td>
+            <td style="border:none;"><input type="radio" name="food" value="chiken">鶏もも肉</td>
+            <td style="border:none;"><input type="radio" name="food" value="pookloin" >豚ロース（薄切り）</td>
+            <td style="border:none;"><input type="radio" name="food" value="porkloin2" >豚ロース（厚切り）</td>
+            </tr>
+           <tr>
+             <td style="border:none;"><input type="radio" name="food" value="porkbelly" >豚バラ肉</td>
+            <td style="border:none;"><input type="radio" name="food" value="minched" >ひき肉</td>
+            <td style="border:none;"><input type="radio" name="food" value="bacon" >ベーコン</td>
            </tr>
           </table>
           </div>
@@ -55,14 +58,13 @@
 <!--//食材の整理のため、テーブルを作成  -->
 <!--//1行あたり２つの食材を並べる。  -->
 <!--//行を追加する場合、<tr><td>～</td></tr>を追加 -->
-           <table style="border:none;">
-            <tr style="border:none;">
-             <td style="border:none;"><input type="radio" name="food" value="Azi">あじ</td>
-             <td style="border:none;"><input type="radio" name="food" value="Iwashi" >いわし</td>
-            </tr>
-            <tr style="border:none;">
-             <td style="border:none;"><input type="radio" name="food" value="Sanma" >さんま</td>
-             <td style="border:none;"><input type="radio" name="food" value="Maguro">まぐろ</td>
+           <table style="bordder:none;">
+            <tr>
+             <td style="border:none;"><input type="radio" name="food" value="azi">ブリ</td>
+             <td style="border:none;"><input type="radio" name="food" value="buri" >アジ</td>
+             <td style="border:none;"><input type="radio" name="food" value="shrimp" >エビ</td>
+            <tr>
+             <td style="border:none;"><input type="radio" name="food" value="sakurashrimp">桜エビ</td>
             </tr>
            </table>
           </div>
@@ -81,17 +83,28 @@
 <!--//1行あたり２つの食材を並べる。  -->
 <!--//行を追加する場合、<tr><td></td></tr>を追加 -->
           <table style="border:none;">
-           <tr style="border:none;">
+           <tr>
+            <td style="border:none;"><input type="radio" name="food" value="radish" >大根</td>
+            <td style="border:none;"><input type="radio" name="food" value="greenpeppar" >ピーマン</td>
+            <td style="border:none;"><input type="radio" name="food" value="onion" >玉ねぎ</td>
+           </tr>
+           <tr>
+            <td style="border:none;"><input type="radio" name="food" value="mix" >ミックスベジタブル</td>
             <td style="border:none;"><input type="radio" name="food" value="carrot" >にんじん</td>
-            <td style="border:none;"><input type="radio" name="food" value="onion" >たまねぎ</td>
+            <td style="border:none;"><input type="radio" name="food" value="broccoli"> ブロッコリー</td>
            </tr>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="green peper" >ピーマン</td>
+            <td style="border:none;"><input type="radio" name="food" value="leek" >長ネギ</td>
+            <td style="border:none;"><input type="radio" name="food" value="cabbage" >キャベツ</td>
+            <td style="border:none;"><input type="radio" name="food" value="chive" >ニラ</td>
+           </tr>
+           <tr>
+            <td style="border:none;"><input type="radio" name="food" value="beansprout" >もやし</td>
             <td style="border:none;"><input type="radio" name="food" value="tomato" >トマト</td>
+            <td style="border:none;"><input type="radio" name="food" value="coriander" >パクチー</td>
            </tr>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="pumpkin" >かぼちゃ</td>
-            <td style="border:none;"><input type="radio" name="food" value="Cucumber " >きゅうり</td>
+            <td style="border:none;"><input type="radio" name="food" value="macrophyll" >大葉</td>
            </tr>
           </table>
         </div>
@@ -109,13 +122,23 @@
 <!--//1行あたり２つの食材を並べる。  -->
 <!--//行を追加する場合、<tr><td></td></tr>を追加 -->
           <table style="border:none;">
-           <tr style="border:none;">
-            <td style="border:none;"><input type="radio" name="food" value="milk" >牛乳</td>
-            <td style="border:none;"><input type="radio" name="food" value="egg" >たまご</td>
-           </tr>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="rice" >米</td>
-            <td style="border:none;"><input type="radio" name="food" value="spaghetti" >スパゲッティ</td>
+            <td style="border:none;"><input type="radio" name="food" value="egg" >たまご</td>
+            <td style="border:none;"><input type="radio" name="food" value="milk" >牛乳</td>
+            <td style="border:none;"><input type="radio" name="food" value="cream" >生クリーム</td>
+           </tr>
+           <tr style="border:none;">
+            <td style="border:none;"><input type="radio" name="food" value="cheese" >チーズ</td>
+            <td style="border:none;"><input type="radio" name="food" value="bambooshoot" >タケノコの水煮</td>
+            <td style="border:none;"><input type="radio" name="food" value="tofu" >豆腐</td>
+           </tr>
+           <tr style="border:none;">
+            <td style="border:none;"><input type="radio" name="food" value="clam" >アサリの水煮</td>
+            <td style="border:none;"><input type="radio" name="food" value="kimchi" >キムチ</td>
+            <td style="border:none;"><input type="radio" name="food" value="peanuts" >ピーナッツ</td>
+           </tr>
+           <tr style="border:none;">
+            <td style="border:none;"><input type="radio" name="food" value="seawood" >のり</td>
            </tr>
           </table>
           </div>
