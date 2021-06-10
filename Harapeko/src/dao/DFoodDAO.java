@@ -10,25 +10,24 @@ import java.util.List;
 
 import model.Dish;
 
-
-public class DSuggestDAO {
+public class DFoodDAO {
 	public List<Dish> select(Dish dish,String food) {
 		Connection conn = null;
 
-		List<Dish> dishList = new ArrayList<Dish>();
+		List<Dish> foodList2 = new ArrayList<Dish>();
 
 		try {
 			Class.forName("org.h2.Driver");
 
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-5/data", "sa", "sa");
 
-			//SQL文
-			String sql = "select distinct md.dish_id, md.dish_name, md.img_path, md.dish_genre, md.difficulty, md.cal, md.url from dish_details as dd, m_dish md, m_food mf"
+			//SQL文 料理IDで検索してSelectはFood_name
+			String sql = "select mf.food_name from dish_details as dd, m_dish md, m_food mf"
 					+ " where dd.dish_id = md.dish_id AND dd.food_id = mf.food_id"
-					+ " and md.CAL <= ? and md.DISH_GENRE like ? and md.DIFFICULTY like ? and mf.food_name like ?;";
+					+ " and mf.dish_id=?;";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			// SQL完成させる "%"+ + "%"
+			// SQL完成させる
 
 				if(dish.getCal()==0){
 					pStmt.setInt(1, 100000);
@@ -59,16 +58,16 @@ public class DSuggestDAO {
 				rs.getString("difficulty"),
 				rs.getString("url")
 				);
-				dishList.add(card);		//63�s�ڂ�SearchServe�ɑ�����
+				foodList2.add(card);		//63�s�ڂ�SearchServe�ɑ�����
 			}
 		}
 		catch (SQLException e) {
 			e.printStackTrace();			//cardList=null�̏ꍇconsole�ɗ�O���o���B
-			dishList = null;
+			foodList2 = null;
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			dishList = null;
+			foodList2 = null;
 		}
 		finally {
 			// �f�[�^�x�[�X��ؒf
@@ -78,14 +77,13 @@ public class DSuggestDAO {
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
-					dishList = null;
+					foodList2 = null;
 				}
 			}
 		}
 
 		// ���ʂ�Ԃ� search_Servlet.java�Ō������ʂ����N�G�X�g�X�R�[�v�Ɋi�[����
-		return dishList;
+		return foodList2;
 	}
-
 
 }
