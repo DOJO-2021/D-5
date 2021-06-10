@@ -7,13 +7,13 @@
 <a href="/Harapeko/MainServlet">メインへ戻る</a>
 <h1>どんな気分？</h1>
 
-<div>
+
 <form method="POST" action="/Harapeko/SuggestServlet" name="SUGGEST">
 <input type="reset" value="リセット" name="reset">
-<table class="table1"style="border:none;">
+<table>
 <tr style="border:none;">
 <td valign="top" style="border:none;">
-<table style="border:none;">
+<table class="table1">
       <tr style="border:none;">
        <td style="border:none;"><strong>食材</strong></td>
       </tr>
@@ -149,7 +149,7 @@
 </td>
 
 <td valign="top" valign="top"style="border:none;">
-<table class="table2" style="border:none;">
+<table class="table2">
       <tr style="border:none;">
        <th style="border:none;">ジャンル</th>
          <td>
@@ -187,8 +187,8 @@
         <th style="border:none;">はらペコーぬのきまぐれスイッチ</th>
         <td>
          <label>
-         <input type="radio" name="feeling" value="yes" checked>
-         <input type="radio" name="feeling" value="no">
+         <input type="radio" name="feeling" value="yes" checked>ON
+         <input type="radio" name="feeling" value="no">OFF
           </label>
         </td>
       </tr>
@@ -199,7 +199,7 @@
 <input type="submit"  value="決定" >
 </form>
 </div>
-</div>
+
 </main>
 
 <jsp:include page="/WEB-INF/jsp/footer.jsp"/>
