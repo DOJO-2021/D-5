@@ -8,9 +8,10 @@
 	<link rel="stylesheet" href="/Harapeko/css/common.css">
 </head>
 <body>
-	<div class="wrapper">
+
 		<header class="header">
 			<div class="logo">
-				<h1><img alt="はらぺこ。" src="/Harapeko/images/logo1_2.jpg"></h1>
+				<h2><img alt="はらぺこ。" src="/Harapeko/images/logo1_2.jpg"></h2>
 			</div>
 		</header>
+</body>
