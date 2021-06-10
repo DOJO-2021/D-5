@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,6 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import dao.DSuggestDAO;
+import model.Dish;
 
 /**
  * Servlet implementation class SuggestServlet
@@ -31,6 +35,23 @@ public class SuggestServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 
+		// リクエストパラメータを取得する
+		request.setCharacterEncoding("UTF-8");
+		String food = request.getParameter("food");
+		int cal = Integer.parseInt(request.getParameter("cal"));
+		String diff = request.getParameter("difficulty");
+		String genre = request.getParameter("genre");
+		String feeling = request.getParameter("feeling");
+
+
+		DSuggestDAO DsDao = new DSuggestDAO();
+		List<Dish> dishList = DsDao.select(new Dish("", "", "", genre,cal, diff, ""),food);
+
+
+		for(Dish dish : dishList) {
+			System.out.println(dish.getName());
+			System.out.println(dish.getCal());
+		}
 	}
 
 }
