@@ -18,7 +18,7 @@
 	</div>
 
 	<div class="peko">
-		<img alt="はらペコーぬ" src="">
+		<img alt="はらペコーぬ" src="/Harapeko/images/harapekonu1.jpg">
 	</div>
 </div>
 </main>
