@@ -14,4 +14,4 @@ function check(){
 }
 
 
-<script type="text/javascript" src="common.js"></script>
+
