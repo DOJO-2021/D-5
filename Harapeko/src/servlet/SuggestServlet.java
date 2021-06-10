@@ -34,8 +34,6 @@ public class SuggestServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
@@ -55,19 +53,18 @@ public class SuggestServlet extends HttpServlet {
 		DSuggestDAO DsDao = new DSuggestDAO();
 		List<Dish> dishList = DsDao.select(new Dish("", "", "", genre,cal, diff, ""),food);
 
-		for(Dish dish : dishList) {
-			System.out.println(dish.getName());
-		}
-
-		Dish recommend = dishList.get((int)(Math.random() * dishList.size()));
+		Dish dish = dishList.get((int)(Math.random() * dishList.size()));
 
 		DFoodDAO DfDao = new DFoodDAO();
-		List<Food> foodList = DfDao.select2(recommend);
+		List<Food> foodList = DfDao.select2(dish);
 
 		for(Food foods : foodList) {
-			System.out.println(foods.getName());
+			dish.setFoodList(foods);
 		}
 
-	}
+		request.setAttribute("dish", dish);
 
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+		dispatcher.forward(request, response);
+	}
 }
