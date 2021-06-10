@@ -92,7 +92,7 @@
            <tr>
             <td style="border:none;"><input type="radio" name="food" value="f36" >ミックスベジタブル</td>
             <td style="border:none;"><input type="radio" name="food" value="f42" >にんじん</td>
-            <td style="border:none;"><input type="radio" name="food" value="f47"> ブロッコリー</td>
+            <td style="border:none;"><input type="radio" name="food" value="f47">ブロッコリー</td>
            </tr>
            <tr>
             <td style="border:none;"><input type="radio" name="food" value="f54" >長ネギ</td>
