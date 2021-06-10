@@ -5,13 +5,13 @@
 	<h1 class="heading">メインメニュー</h1>
 
 	<div class="dishsuggest">
-		<a href="/Harapeko/SuggestServlet">
-			<img alt="条件入力へ" src="">
-		</a>
+		<form method="post">
+			<button type="submit" ><img alt="条件入力へ" src=""></button>
+		</form>
 	</div>
 
 	<div class="recommend">
-		<p>今日のおすすめ食材は</p>
+		<p>おすすめ食材は</p>
 		<p>${recomend}</p>
 	</div>
 

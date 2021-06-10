@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.FSuggestDAO;
 import model.Food;
 
-@WebServlet("/MainSrvlet")
+@WebServlet("/MainServlet")
 public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -30,4 +30,13 @@ public class MainServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
 		dispatcher.forward(request, response);
 	}
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		// 条件入力ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/SuggestServlet");
+		dispatcher.forward(request, response);
+	}
+
 }
