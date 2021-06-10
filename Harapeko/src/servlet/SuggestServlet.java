@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.DFoodDAO;
 import dao.DSuggestDAO;
 import model.Dish;
+import model.Food;
 
 /**
  * Servlet implementation class SuggestServlet
@@ -50,10 +52,21 @@ public class SuggestServlet extends HttpServlet {
 			cal = Integer.parseInt(request.getParameter("cal"));
 		}
 
-
 		DSuggestDAO DsDao = new DSuggestDAO();
 		List<Dish> dishList = DsDao.select(new Dish("", "", "", genre,cal, diff, ""),food);
 
+		for(Dish dish : dishList) {
+			System.out.println(dish.getName());
+		}
+
+		Dish recommend = dishList.get((int)(Math.random() * dishList.size()));
+
+		DFoodDAO DfDao = new DFoodDAO();
+		List<Food> foodList = DfDao.select2(recommend);
+
+		for(Food foods : foodList) {
+			System.out.println(foods.getName());
+		}
 
 	}
 
