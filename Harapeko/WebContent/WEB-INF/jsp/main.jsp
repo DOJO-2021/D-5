@@ -5,7 +5,7 @@
 	<h1 class="heading">メインメニュー</h1>
 
 	<div class="dishsuggest">
-		<a href="/Harapeko/MainServlet">
+		<a href="/Harapeko/SuggestServlet">
 			<img alt="条件入力へ" src="">
 		</a>
 	</div>
