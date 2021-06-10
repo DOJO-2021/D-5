@@ -47,6 +47,9 @@ public class SuggestServlet extends HttpServlet {
 		DSuggestDAO DsDao = new DSuggestDAO();
 		List<Dish> dishList = DsDao.select(new Dish("", "", "", genre,cal, diff, ""),food);
 
+		System.out.println(food);
+		System.out.println(genre);
+		System.out.println(diff);
 
 		for(Dish dish : dishList) {
 			System.out.println(dish.getName());
