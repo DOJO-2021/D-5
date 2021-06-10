@@ -2,10 +2,8 @@
     pageEncoding="UTF-8"%>
     <link rel="styleSheet" href="/Harapeko/css/common.css">
 	<footer class="footer">
-		<hr>
 		<br>
 		<p>&copy; 2021 ※※主義</p>
 	</footer>
-</div>
 </body>
 </html>
