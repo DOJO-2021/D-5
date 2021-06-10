@@ -23,7 +23,7 @@ public class DSuggestDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-5/data", "sa", "sa");
 
 			//SQL文
-			String sql = "select distinct md.dish_id, md.dish_name, md.img_path, md.dish_genre, md.difficulty, md.cal, md.url from dish_details as dd, m_dish md, m_food mf"
+			String sql = "select distinct md.dish_id, md.dish_name, md.img_path, md.dish_genre, md.difficulty, md.cal, md.url from dish_details as dd, m_dish as md, m_food as mf"
 					+ " where dd.dish_id = md.dish_id AND dd.food_id = mf.food_id"
 					+ " and md.CAL <= ? and md.DISH_GENRE like ? and md.DIFFICULTY like ? and mf.food_name like ?;";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
