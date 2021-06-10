@@ -38,23 +38,23 @@ public class SuggestServlet extends HttpServlet {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		String food = request.getParameter("food");
-		int cal = Integer.parseInt(request.getParameter("cal"));
+		int cal = 0;
 		String diff = request.getParameter("difficulty");
 		String genre = request.getParameter("genre");
 		String feeling = request.getParameter("feeling");
+
+		if(request.getParameter("cal") == "") {
+			cal = 100000;
+		}
+		else {
+			cal = Integer.parseInt(request.getParameter("cal"));
+		}
 
 
 		DSuggestDAO DsDao = new DSuggestDAO();
 		List<Dish> dishList = DsDao.select(new Dish("", "", "", genre,cal, diff, ""),food);
 
-		System.out.println(food);
-		System.out.println(genre);
-		System.out.println(diff);
 
-		for(Dish dish : dishList) {
-			System.out.println(dish.getName());
-			System.out.println(dish.getCal());
-		}
 	}
 
 }

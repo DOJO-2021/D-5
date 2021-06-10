@@ -25,23 +25,24 @@ public class DSuggestDAO {
 			//SQL文
 			String sql = "select distinct md.dish_id, md.dish_name, md.img_path, md.dish_genre, md.difficulty, md.cal, md.url from dish_details as dd, m_dish as md, m_food as mf"
 					+ " where dd.dish_id = md.dish_id AND dd.food_id = mf.food_id"
-					+ " and md.CAL <= ? and md.DISH_GENRE like ? and md.DIFFICULTY like ? and mf.food_name like ?;";
+					+ " and md.CAL <= ? and md.DISH_GENRE like ? and md.DIFFICULTY like ? and mf.food_id like ?;";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL完成させる "%"+ + "%"
 
-				if(dish.getCal()==0){
-					pStmt.setInt(1, 100000);
-				}
-				else {
-					pStmt.setInt(1, dish.getCal());
-				}
+
+				pStmt.setInt(1, dish.getCal());
 
 				pStmt.setString(2, "%"+  dish.getGenre() + "%");
 
 				pStmt.setString(3,  "%"+ dish.getDiff() + "%");
 
-				pStmt.setString(4, "%"+ food + "%") ;
+				if(food == null) {
+					pStmt.setString(4, "%");
+				}
+				else {
+					pStmt.setString(4, "%"+ food + "%") ;
+				}
 
 
 

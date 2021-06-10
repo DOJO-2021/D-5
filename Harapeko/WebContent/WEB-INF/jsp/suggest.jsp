@@ -34,14 +34,14 @@
 <!--//行を追加する場合、<tr><td></td></tr>を追加 -->
           <table>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="chiken">鶏もも肉</td>
-            <td style="border:none;"><input type="radio" name="food" value="pookloin" >豚ロース（薄切り）</td>
-            <td style="border:none;"><input type="radio" name="food" value="porkloin2" >豚ロース（厚切り）</td>
+            <td style="border:none;"><input type="radio" name="food" value="f23">鶏もも肉</td>
+            <td style="border:none;"><input type="radio" name="food" value="f24" >豚ロース（薄切り）</td>
+            <td style="border:none;"><input type="radio" name="food" value="f29" >豚ロース（厚切り）</td>
             </tr>
            <tr>
-             <td style="border:none;"><input type="radio" name="food" value="porkbelly" >豚バラ肉</td>
-            <td style="border:none;"><input type="radio" name="food" value="minched" >ひき肉</td>
-            <td style="border:none;"><input type="radio" name="food" value="bacon" >ベーコン</td>
+             <td style="border:none;"><input type="radio" name="food" value="f56" >豚バラ肉</td>
+            <td style="border:none;"><input type="radio" name="food" value="f31" >ひき肉</td>
+            <td style="border:none;"><input type="radio" name="food" value="f35" >ベーコン</td>
            </tr>
           </table>
           </div>
@@ -61,11 +61,11 @@
 <!--//行を追加する場合、<tr><td>～</td></tr>を追加 -->
            <table style="bordder:none;">
             <tr>
-             <td style="border:none;"><input type="radio" name="food" value="azi">ブリ</td>
-             <td style="border:none;"><input type="radio" name="food" value="buri" >アジ</td>
-             <td style="border:none;"><input type="radio" name="food" value="shrimp" >エビ</td>
+             <td style="border:none;"><input type="radio" name="food" value="f25">ブリ</td>
+             <td style="border:none;"><input type="radio" name="food" value="f27" >アジ</td>
+             <td style="border:none;"><input type="radio" name="food" value="f53" >エビ</td>
             <tr>
-             <td style="border:none;"><input type="radio" name="food" value="sakurashrimp">桜エビ</td>
+             <td style="border:none;"><input type="radio" name="food" value="f70">桜エビ</td>
             </tr>
            </table>
           </div>
@@ -85,27 +85,27 @@
 <!--//行を追加する場合、<tr><td></td></tr>を追加 -->
           <table style="border:none;">
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="radish" >大根</td>
-            <td style="border:none;"><input type="radio" name="food" value="greenpeppar" >ピーマン</td>
-            <td style="border:none;"><input type="radio" name="food" value="onion" >玉ねぎ</td>
+            <td style="border:none;"><input type="radio" name="food" value="f26" >大根</td>
+            <td style="border:none;"><input type="radio" name="food" value="f30" >ピーマン</td>
+            <td style="border:none;"><input type="radio" name="food" value="f34" >玉ねぎ</td>
            </tr>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="mix" >ミックスベジタブル</td>
-            <td style="border:none;"><input type="radio" name="food" value="carrot" >にんじん</td>
-            <td style="border:none;"><input type="radio" name="food" value="broccoli"> ブロッコリー</td>
+            <td style="border:none;"><input type="radio" name="food" value="f36" >ミックスベジタブル</td>
+            <td style="border:none;"><input type="radio" name="food" value="f42" >にんじん</td>
+            <td style="border:none;"><input type="radio" name="food" value="f47"> ブロッコリー</td>
            </tr>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="leek" >長ネギ</td>
-            <td style="border:none;"><input type="radio" name="food" value="cabbage" >キャベツ</td>
-            <td style="border:none;"><input type="radio" name="food" value="chive" >ニラ</td>
+            <td style="border:none;"><input type="radio" name="food" value="f54" >長ネギ</td>
+            <td style="border:none;"><input type="radio" name="food" value="f57" >キャベツ</td>
+            <td style="border:none;"><input type="radio" name="food" value="f61" >ニラ</td>
            </tr>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="beansprout" >もやし</td>
-            <td style="border:none;"><input type="radio" name="food" value="tomato" >トマト</td>
-            <td style="border:none;"><input type="radio" name="food" value="coriander" >パクチー</td>
+            <td style="border:none;"><input type="radio" name="food" value="f69" >もやし</td>
+            <td style="border:none;"><input type="radio" name="food" value="f75" >トマト</td>
+            <td style="border:none;"><input type="radio" name="food" value="f77" >パクチー</td>
            </tr>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="macrophyll" >大葉</td>
+            <td style="border:none;"><input type="radio" name="food" value="f79" >大葉</td>
            </tr>
           </table>
         </div>
@@ -124,22 +124,22 @@
 <!--//行を追加する場合、<tr><td></td></tr>を追加 -->
           <table style="border:none;">
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="egg" >たまご</td>
-            <td style="border:none;"><input type="radio" name="food" value="milk" >牛乳</td>
-            <td style="border:none;"><input type="radio" name="food" value="cream" >生クリーム</td>
+            <td style="border:none;"><input type="radio" name="food" value="f28" >たまご</td>
+            <td style="border:none;"><input type="radio" name="food" value="f32" >牛乳</td>
+            <td style="border:none;"><input type="radio" name="food" value="f37" >生クリーム</td>
            </tr>
            <tr style="border:none;">
-            <td style="border:none;"><input type="radio" name="food" value="cheese" >チーズ</td>
-            <td style="border:none;"><input type="radio" name="food" value="bambooshoot" >タケノコの水煮</td>
-            <td style="border:none;"><input type="radio" name="food" value="tofu" >豆腐</td>
+            <td style="border:none;"><input type="radio" name="food" value="f40" >チーズ</td>
+            <td style="border:none;"><input type="radio" name="food" value="f59" >タケノコの水煮</td>
+            <td style="border:none;"><input type="radio" name="food" value="f63" >豆腐</td>
            </tr>
            <tr style="border:none;">
-            <td style="border:none;"><input type="radio" name="food" value="clam" >アサリの水煮</td>
-            <td style="border:none;"><input type="radio" name="food" value="kimchi" >キムチ</td>
-            <td style="border:none;"><input type="radio" name="food" value="peanuts" >ピーナッツ</td>
+            <td style="border:none;"><input type="radio" name="food" value="f64" >アサリの水煮</td>
+            <td style="border:none;"><input type="radio" name="food" value="f65" >キムチ</td>
+            <td style="border:none;"><input type="radio" name="food" value="f71" >ピーナッツ</td>
            </tr>
            <tr style="border:none;">
-            <td style="border:none;"><input type="radio" name="food" value="seawood" >のり</td>
+            <td style="border:none;"><input type="radio" name="food" value="f80" >のり</td>
            </tr>
           </table>
           </div>
@@ -155,11 +155,11 @@
          <td>
           <label>
           <select name ="genre">
-            <option value="empty"></option>
-          	<option value="japan">和食</option>
-          	<option value="western">洋食</option>
-          	<option value="china">中華</option>
-          	<option value="other">その他</option>
+            <option value=""></option>
+          	<option value="和">和食</option>
+          	<option value="洋">洋食</option>
+          	<option value="中">中華</option>
+          	<option value="その他">その他</option>
           </select>
           </label>
         </td>
@@ -175,9 +175,10 @@
         <td>
           <label>
             <select name ="difficulty">
-          	<option value="easy">★☆☆</option>
-          	<option value="normal">★★☆</option>
-          	<option value="difficult">★★★</option>
+          	<option value=""></option>
+          	<option value="★☆☆">★☆☆</option>
+          	<option value="★★☆">★★☆</option>
+          	<option value="★★★">★★★</option>
           </select>
           </label>
         </td>
