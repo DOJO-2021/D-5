@@ -8,6 +8,7 @@
 
 <div>
 <form method="POST" action="/Harapeko/SuggestServlet" name="SUGGEST">
+<input type="reset" value="リセット" name="reset">
 <table class="table1"style="border:none;">
 <tr style="border:none;">
 <td valign="top" style="border:none;">
@@ -15,63 +16,108 @@
       <tr style="border:none;">
        <td style="border:none;"><strong>食材</strong></td>
       </tr>
+      <tr style="border:none;">
+       <td style="border:none;"><strong></strong></td>
+      </tr>
       <tr>
         <td style="border:none;">
           <div onclick="obj=document.getElementById('meat').style; obj.display=(obj.display=='none')?'block':'none';">
-              <a style="cursor:pointer;">肉</a>
+              <a style="cursor:pointer;">肉🍖</a>
           </div>
 <!--// 折り畳み展開ポインタ -->
 
 <!-- 折り畳まれ部分 -->
           <div id="meat" style="display:none;clear:both;">
-            <input type="radio" name="food" value="pork" checked>豚肉
-            <input type="radio" name="food" value="chicken" >鶏肉
-            <input type="radio" name="food" value="beef" >牛肉
+<!--//食材の整理のため、テーブルを作成  -->
+<!--//1行あたり２つの食材を並べる。  -->
+<!--//行を追加する場合、<tr><td></td></tr>を追加 -->
+          <table>
+           <tr style="border:none;">
+            <td style="border:none;"><input type="radio" name="food" value="pork" checked>豚肉</td>
+            <td style="border:none;"><input type="radio" name="food" value="chicken" >鶏肉</td>
+           </tr>
+           <tr>
+            <td style="border:none;"><input type="radio" name="food" value="beef" >牛肉</td>
+           </tr>
+          </table>
           </div>
         </td>
         </tr>
         <tr>
         <td style="border:none;">
           <div onclick="obj=document.getElementById('fish').style; obj.display=(obj.display=='none')?'block':'none';">
-              <a style="cursor:pointer;">魚介類</a>
+              <a style="cursor:pointer;">魚介類🐡</a>
           </div>
 <!--// 折り畳み展開ポインタ -->
 
 <!-- 折り畳まれ部分 -->
           <div id="fish" style="display:none;clear:both;">
-            <input type="radio" name="food" value="Azi" checked>あじ
-            <input type="radio" name="food" value="Iwashi" >いわし
-            <input type="radio" name="food" value="Sanma" >さんま
+<!--//食材の整理のため、テーブルを作成  -->
+<!--//1行あたり２つの食材を並べる。  -->
+<!--//行を追加する場合、<tr><td>～</td></tr>を追加 -->
+           <table style="border:none;">
+            <tr style="border:none;">
+             <td style="border:none;"><input type="radio" name="food" value="Azi">あじ</td>
+             <td style="border:none;"><input type="radio" name="food" value="Iwashi" >いわし</td>
+            </tr>
+            <tr style="border:none;">
+             <td style="border:none;"><input type="radio" name="food" value="Sanma" >さんま</td>
+             <td style="border:none;"><input type="radio" name="food" value="Maguro">まぐろ</td>
+            </tr>
+           </table>
           </div>
         </td>
         </tr>
         <tr>
         <td style="border:none;">
           <div onclick="obj=document.getElementById('vegetable').style; obj.display=(obj.display=='none')?'block':'none';">
-              <a style="cursor:pointer;">野菜</a>
+              <a style="cursor:pointer;">野菜🥬</a>
           </div>
 <!--// 折り畳み展開ポインタ -->
 
 <!-- 折り畳まれ部分 -->
           <div id="vegetable" style="display:none;clear:both;">
-            <input type="radio" name="food" value="carrot" checked>にんじん
-            <input type="radio" name="food" value="onion" >たまねぎ
-            <input type="radio" name="food" value="green peper" >ピーマン
-          </div>
+<!--//食材の整理のため、テーブルを作成  -->
+<!--//1行あたり２つの食材を並べる。  -->
+<!--//行を追加する場合、<tr><td></td></tr>を追加 -->
+          <table style="border:none;">
+           <tr style="border:none;">
+            <td style="border:none;"><input type="radio" name="food" value="carrot" >にんじん</td>
+            <td style="border:none;"><input type="radio" name="food" value="onion" >たまねぎ</td>
+           </tr>
+           <tr>
+            <td style="border:none;"><input type="radio" name="food" value="green peper" >ピーマン</td>
+            <td style="border:none;"><input type="radio" name="food" value="tomato" >トマト</td>
+           </tr>
+           <tr>
+            <td style="border:none;"><input type="radio" name="food" value="pumpkin" >かぼちゃ</td>
+            <td style="border:none;"><input type="radio" name="food" value="Cucumber " >きゅうり</td>
+           </tr>
+          </table>
+        </div>
         </td>
         <tr>
         <td style="border:none;">
           <div onclick="obj=document.getElementById('other').style; obj.display=(obj.display=='none')?'block':'none';">
-              <a style="cursor:pointer;">穀類・乳製品・その他</a>
+              <a style="cursor:pointer;">穀類🍚・乳製品🥛・その他</a>
           </div>
 <!--// 折り畳み展開ポインタ -->
 
 <!-- 折り畳まれ部分 -->
           <div id="other" style="display:none;clear:both;">
-            <input type="radio" name="food" value="milk" checked>牛乳
-            <input type="radio" name="food" value="egg" >たまご
-            <input type="radio" name="food" value="rice" >米
-            <input type="radio" name="food" value="spaghetti" >スパゲッティ
+<!--//食材の整理のため、テーブルを作成  -->
+<!--//1行あたり２つの食材を並べる。  -->
+<!--//行を追加する場合、<tr><td></td></tr>を追加 -->
+          <table style="border:none;">
+           <tr style="border:none;">
+            <td style="border:none;"><input type="radio" name="food" value="milk" >牛乳</td>
+            <td style="border:none;"><input type="radio" name="food" value="egg" >たまご</td>
+           </tr>
+           <tr>
+            <td style="border:none;"><input type="radio" name="food" value="rice" >米</td>
+            <td style="border:none;"><input type="radio" name="food" value="spaghetti" >スパゲッティ</td>
+           </tr>
+          </table>
           </div>
         </td>
         </tr>
