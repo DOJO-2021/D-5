@@ -46,6 +46,7 @@ public class SuggestServlet extends HttpServlet {
 		String diff = request.getParameter("difficulty");
 		String genre = request.getParameter("genre");
 		String feeling = request.getParameter("feeling");
+		String id = request.getParameter("id");
 		if(request.getParameter("cal") == "") {
 			cal = 100000;
 		}
@@ -63,7 +64,6 @@ public class SuggestServlet extends HttpServlet {
         c.setTime(now);
         int hour = c.get(Calendar.HOUR_OF_DAY);
 
-        System.out.println(hour);
 
         if(feeling.equals("yes")) {
             if(hour>=0 && hour<=4) {
@@ -101,16 +101,29 @@ public class SuggestServlet extends HttpServlet {
         }
         else {
         //通常の処理です。
+            peComment = "普通に検索するなら食べ■グとかで良くないペコか...？";
+
 			dishList = DsDao.select(new Dish("", "", "", genre,cal, diff, ""),food);
         }
 
+        //見つからなかった時。
 		if(dishList.size() == 0) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/resultError.jsp");
 			dispatcher.forward(request, response);
 		}
-
 		else {
+			if (dishList.size() > 1){
+				for(int i=0 ; i < dishList.size() ; i++) {
+					if(dishList.get(i).getId().equals(id)) {
+						dishList.remove(i);
+						break;
+					}
+				}
+			}
+
 			Dish dish = dishList.get((int)(Math.random() * dishList.size()));
+
+			id = dish.getId();
 
 			DFoodDAO DfDao = new DFoodDAO();
 			List<Food> foodList = DfDao.select2(dish);
@@ -120,6 +133,7 @@ public class SuggestServlet extends HttpServlet {
 			}
 
 			request.setAttribute("dish", dish);
+			request.setAttribute("id", id);
 			request.setAttribute("food", food);
 			request.setAttribute("cal", cal);
 			request.setAttribute("diff", diff);

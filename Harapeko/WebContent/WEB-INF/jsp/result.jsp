@@ -73,6 +73,7 @@
 </div>
 <form method="post" action="/Harapeko/SuggestServlet">
 	<input type="hidden" name="food" value="${food}">
+	<input type="hidden" name="id" value="${id}">
 	<input type="hidden" name="cal" value="${cal}">
 	<input type="hidden" name="difficulty" value="${diff}">
 	<input type="hidden" name="genre" value="${genre}">
