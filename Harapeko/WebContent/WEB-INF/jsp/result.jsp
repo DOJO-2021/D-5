@@ -5,7 +5,7 @@
 
 <main>
 <div class="wrapper">
-<a href="/Harapeko/SuggestServlet">前の画面に戻る</a>
+<button onclick="javascript:history.back();">前の画面に戻る</button>
 <h1>今日のメニューはこれだ！</h1>
 
 <div class="table">

@@ -53,6 +53,12 @@ public class SuggestServlet extends HttpServlet {
 		DSuggestDAO DsDao = new DSuggestDAO();
 		List<Dish> dishList = DsDao.select(new Dish("", "", "", genre,cal, diff, ""),food);
 
+
+		if(dishList.size() == 0) {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/resultError.jsp");
+			dispatcher.forward(request, response);
+		}
+
 		Dish dish = dishList.get((int)(Math.random() * dishList.size()));
 
 		DFoodDAO DfDao = new DFoodDAO();
@@ -64,7 +70,10 @@ public class SuggestServlet extends HttpServlet {
 
 		request.setAttribute("dish", dish);
 
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
 		dispatcher.forward(request, response);
+
+
 	}
 }
