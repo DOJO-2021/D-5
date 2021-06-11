@@ -8,7 +8,7 @@
 
 	<div class="dishsuggest">
 		<a href="/Harapeko/SuggestServlet">
-			<img alt="条件入力へ" src="">
+			<img alt="条件入力へ" src="/Harapeko/images/条件入力.jpg">
 		</a>
 	</div>
 
