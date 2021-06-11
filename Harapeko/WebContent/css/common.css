@@ -85,7 +85,11 @@ th {
  text-align:left;
 }
 
-
+/* カロリー枠の大きさ */
 input[name=cal] {
   width: 5em;
+}
+
+.decision{
+ text-align:left;
 }

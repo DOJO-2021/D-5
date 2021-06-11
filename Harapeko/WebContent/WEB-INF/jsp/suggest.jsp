@@ -1,6 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="styleSheet" href="/Harapeko/css/common.css">
 <jsp:include page="/WEB-INF/jsp/header.jsp"/>
+</head>
+<body>
+	<header class="header">
+		<div class="logo">
+			<h2><img alt="はらぺこ。" src="/Harapeko/images/logo1_2.jpg"></h2>
+		</div>
+	</header>
+
 <script type="text/javascript" src="common.js"></script>
 <main>
 <div class="wrapper">
@@ -199,12 +207,12 @@
 </div>
 </td>
 </tr>
-
-
-
-<input type="submit"  value="決定" >
 </div>
 </table>
+
+<div class="decision"><input type="submit" value="決定" ></div>
+
+
 </form>
 
 </div>
