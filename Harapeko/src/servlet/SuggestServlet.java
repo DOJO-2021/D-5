@@ -1,7 +1,11 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -42,43 +46,90 @@ public class SuggestServlet extends HttpServlet {
 		String diff = request.getParameter("difficulty");
 		String genre = request.getParameter("genre");
 		String feeling = request.getParameter("feeling");
-
 		if(request.getParameter("cal") == "") {
 			cal = 100000;
 		}
 		else {
 			cal = Integer.parseInt(request.getParameter("cal"));
 		}
-
+		String peComment = "";
 		DSuggestDAO DsDao = new DSuggestDAO();
-		List<Dish> dishList = DsDao.select(new Dish("", "", "", genre,cal, diff, ""),food);
+		List<Dish> dishList;
 
+       //現在時間を取得
+        Date now = new Date();
+        Calendar c = Calendar.getInstance();
+
+        c.setTime(now);
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+
+        System.out.println(hour);
+
+        if(feeling.equals("yes")) {
+            if(hour>=0 && hour<=4) {
+                //"0時台～4時台：無視。
+            	peComment="眠いペコ。夜食には関わらない主義ペコ。おやすみzzz";
+                dishList = DsDao.select(new Dish("","","", "",100000,"",""),"");
+            }
+            else if (hour >= 5 && hour <= 9) {
+                //5時台～9時台：ジャンルは和食。
+            	peComment = "朝は和食に限るペコ。うん。";
+                dishList = DsDao.select(new Dish("","","", "和",cal,diff,""),food);
+            }
+            else if (hour >= 10 && hour <= 12) {
+                //10時台～13時台：難易度★★★のみ
+            	peComment="チャレンジ精神って大事って思わないペコか？";
+                dishList = DsDao.select(new Dish("","","", genre,cal,"★★★",""),food);
+            }
+            else if (hour >= 14 && hour <= 16) {
+                //14時台～16時台：カロリー無視.
+            	peComment = "夕食の時間が早いほど太らないペコ？";
+                dishList = DsDao.select(new Dish("","","", genre,100000,diff,""),food);
+            }
+            else if (hour >= 14 && hour <= 16) {
+                //17時台～22時台：ニンニクか唐辛子を含む。
+            	peComment="力こそパワーペコ。You know??";
+                List<Dish> dishList1 = DsDao.select(new Dish("","","", genre,cal,diff,""),"粉唐辛子");
+                List<Dish> dishList2 = DsDao.select(new Dish("","","", genre,cal,diff,""),"ニンニク");
+                dishList = Stream.concat(dishList1.stream(),dishList2.stream())
+                .distinct().collect(Collectors.toList());
+            }
+            else{
+                peComment = "毎日チゲ食べると美人になるらしいペコ。知らんけど。";
+                dishList = DsDao.select(new Dish("d18","","", "",100000,"",""),"");
+            }
+        }
+        else {
+        //通常の処理です。
+			dishList = DsDao.select(new Dish("", "", "", genre,cal, diff, ""),food);
+        }
 
 		if(dishList.size() == 0) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/resultError.jsp");
 			dispatcher.forward(request, response);
 		}
 
-		Dish dish = dishList.get((int)(Math.random() * dishList.size()));
+		else {
+			Dish dish = dishList.get((int)(Math.random() * dishList.size()));
 
-		DFoodDAO DfDao = new DFoodDAO();
-		List<Food> foodList = DfDao.select2(dish);
+			DFoodDAO DfDao = new DFoodDAO();
+			List<Food> foodList = DfDao.select2(dish);
 
-		for(Food foods : foodList) {
-			dish.setFoodList(foods);
+			for(Food foods : foodList) {
+				dish.setFoodList(foods);
+			}
+
+			request.setAttribute("dish", dish);
+			request.setAttribute("food", food);
+			request.setAttribute("cal", cal);
+			request.setAttribute("diff", diff);
+			request.setAttribute("genre", genre);
+			request.setAttribute("feeling", feeling);
+			request.setAttribute("comment", peComment);
+
+
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+			dispatcher.forward(request, response);
 		}
-
-		request.setAttribute("dish", dish);
-		request.setAttribute("food", food);
-		request.setAttribute("cal", cal);
-		request.setAttribute("diff", diff);
-		request.setAttribute("genre", genre);
-		request.setAttribute("feeling", feeling);
-
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
-		dispatcher.forward(request, response);
-
-
 	}
 }

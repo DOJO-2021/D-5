@@ -7,11 +7,10 @@
 <div class="wrapper">
 <button onclick="javascript:history.back();">前の画面に戻る</button>
 <h1>今日のメニューはこれだ！</h1>
-
+<h1>${comment}</h1>
 <div class="table">
 <table style="border:none;">
 <tr style="border:none;">
-
 <td valign="top" style="border:none;">
 <table style="border:none;">
       <tr style="border:none;">
