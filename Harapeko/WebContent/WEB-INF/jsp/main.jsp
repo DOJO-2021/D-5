@@ -1,7 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<link rel="styleSheet" href="/Harapeko/css/common.css">
-<jsp:include page="/WEB-INF/jsp/header.jsp"/>
 
+<jsp:include page="/WEB-INF/jsp/header.jsp"/>
+	<link rel="stylesheet" href="/Harapeko/css/NewFile.css">
+</head>
+<body>
+	<header class="header">
+		<div class="logo">
+			<h2><img alt="はらぺこ。" src="/Harapeko/images/logo1_2.jpg"></h2>
+		</div>
+	</header>
 <main>
 <div class="wrapper">
 	<h1 class="heading">メインメニュー</h1>
@@ -17,8 +24,12 @@
 		<p>${recomend}</p>
 	</div>
 
+<div class="balloon4" >
+  タッチして欲しいペコ
+</div>
+
 	<div class="peko">
-		<img alt="はらペコーぬ" src="/Harapeko/images/harapekonu1.jpg">
+		<a href="/Harapeko/ProfileServlet"><img alt="はらペコーぬ" src="/Harapeko/images/harapekonu1.jpg"></a>
 	</div>
 </div>
 </main>
