@@ -24,16 +24,12 @@
 		<p>${recomend}</p>
 	</div>
 
-<div class="balloon1" >
-  タッチして欲しいペコ
-</div>
+		<div id="peko">
+			<a href="/Harapeko/ProfileServlet"><img alt="はらペコーぬ" src="/Harapeko/images/harapekonu1trim.jpg"></a>
+		</div>
 
-	<div class="peko">
-		<a href="/Harapeko/ProfileServlet"><img alt="はらペコーぬ" src="/Harapeko/images/harapekonu1.jpg"></a>
-	</div>
+
 </div>
 </main>
 <jsp:include page="/WEB-INF/jsp/footer.jsp"/>
-
-
 
