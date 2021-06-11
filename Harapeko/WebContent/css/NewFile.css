@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+
+/*今日のおすすめ食材*/
+.recommend{
+    position:relative;
+    width:600px;
+    height:110px;
+    background:#FFFF66;
+    padding:10px;
+    text-align:left;
+    color:#FFFFFF;
+    font-size:20px;
+    font-weight:bold;
+    border-radius:27px;
+    -webkit-border-radius:27px;
+    -moz-border-radius:27px;
+}
+.recommend:after{
+    border: solid transparent;
+    content:'';
+    height:0;
+    width:0;
+    pointer-events:none;
+    position:absolute;
+    border-color: rgba(234, 255, 89, 0);
+    border-top-width:67px;
+    border-bottom-width:67px;
+    border-left-width:19px;
+    border-right-width:19px;
+    margin-left: -19px;
+    border-top-color:#FFFF66;
+    top:100%;
+    left:83%;
+}
+
+
+/*メインメニューのペコ画像*/
+#peko{
+margin-left:20em;
+margin-top:5em;
+}
+
