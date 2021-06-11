@@ -2,11 +2,11 @@
 <jsp:include page="/WEB-INF/jsp/header.jsp"/>
 
 <main>
-
+<div class="wrapper">
    <p><a href="/Harapeko/MainServlet">メインへ戻る</a></p>
 	<h1>はらペコーぬは何者？</h1>
-
-    <div><img src="/Harapeko/images/profile2.jpg" alt="キャラクター紹介"></div>
+</div>
+    <div class="hara"><img src="/Harapeko/images/profile2.jpg" alt="キャラクター紹介"></div>
 
 
 </main>

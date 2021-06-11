@@ -4,7 +4,8 @@
 /* 真ん中にそろえる */
 .wrapper {
   margin: 0 auto 0 auto;	/* 中央揃え */
-  width: 700px;			/* 幅を固定 */
+  width: 900px;			/* 幅を固定 */
+
 }
 
 /* 真ん中にそろえる */
@@ -16,13 +17,12 @@ h2 {
 
 /* メニューなどのページタイトル */
 h1 {
-  background: #dfefff;
-  box-shadow: 0px 0px 0px 5px #dfefff;
-  border: dashed 1px #96c2fe;
+  background: #CECAC7;
+  box-shadow: 0px 0px 0px 5px #BABBBF;
+  border: dashed 1px #BABBBF;
   padding: 0.2em 0.5em;
-  color: #f5d4af;
+  color: #7D3100;
 }
-
 
 
 
@@ -52,3 +52,8 @@ a:active {
   color:skyblue;
   text-decoration: none;
 }
+
+
+.hara {
+ text-align:center;
+ }
