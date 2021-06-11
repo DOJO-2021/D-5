@@ -43,12 +43,22 @@
           <table>
            <tr>
             <td style="border:none;"><input type="radio" name="food" value="f23">鶏もも肉</td>
+            <td style="border:none;"><input type="radio" name="food" value="f104" >鶏むね肉</td>
+            <td style="border:none;"><input type="radio" name="food" value="f95" >豚こま切れ</td>
+           </tr>
+           <tr>
             <td style="border:none;"><input type="radio" name="food" value="f24" >豚ロース（薄切り）</td>
             <td style="border:none;"><input type="radio" name="food" value="f29" >豚ロース（厚切り）</td>
-            </tr>
+            <td style="border:none;"><input type="radio" name="food" value="f111" >豚肩ロース</td>
+           </tr>
            <tr>
-             <td style="border:none;"><input type="radio" name="food" value="f56" >豚バラ肉</td>
+            <td style="border:none;"><input type="radio" name="food" value="f56" >豚バラ肉</td>
+            <td style="border:none;"><input type="radio" name="food" value="f81" >牛バラ肉（薄切り）</td>
+            <td style="border:none;"><input type="radio" name="food" value="f85" >牛もも肉（薄切り）</td>
+           </tr>
+           <tr>
             <td style="border:none;"><input type="radio" name="food" value="f31" >ひき肉</td>
+            <td style="border:none;"><input type="radio" name="food" value="f93" >ウインナー</td>
             <td style="border:none;"><input type="radio" name="food" value="f35" >ベーコン</td>
            </tr>
           </table>
@@ -72,8 +82,14 @@
              <td style="border:none;"><input type="radio" name="food" value="f25">ブリ</td>
              <td style="border:none;"><input type="radio" name="food" value="f27" >アジ</td>
              <td style="border:none;"><input type="radio" name="food" value="f53" >エビ</td>
+            </tr>
             <tr>
              <td style="border:none;"><input type="radio" name="food" value="f70">桜エビ</td>
+             <td style="border:none;"><input type="radio" name="food" value="f83" >サバ</td>
+             <td style="border:none;"><input type="radio" name="food" value="f90" >シャケ</td>
+            </tr>
+            <tr>
+             <td style="border:none;"><input type="radio" name="food" value="f97" >イカ</td>
             </tr>
            </table>
           </div>
@@ -114,6 +130,18 @@
            </tr>
            <tr>
             <td style="border:none;"><input type="radio" name="food" value="f79" >大葉</td>
+            <td style="border:none;"><input type="radio" name="food" value="f86" >じゃがいも</td>
+            <td style="border:none;"><input type="radio" name="food" value="f96" >白菜</td>
+           </tr>
+           <tr>
+            <td style="border:none;"><input type="radio" name="food" value="f103" >小ネギ</td>
+            <td style="border:none;"><input type="radio" name="food" value="f107" >レタス</td>
+            <td style="border:none;"><input type="radio" name="food" value="f109" >アボカド</td>
+           </tr>
+           <tr>
+            <td style="border:none;"><input type="radio" name="food" value="f112" >サンチュ</td>
+            <td style="border:none;"><input type="radio" name="food" value="f113" >かいわれ大根</td>
+            <td style="border:none;"><input type="radio" name="food" value="f114" >赤パプリカ</td>
            </tr>
           </table>
         </div>
@@ -141,13 +169,23 @@
             <td style="border:none;"><input type="radio" name="food" value="f59" >タケノコの水煮</td>
             <td style="border:none;"><input type="radio" name="food" value="f63" >豆腐</td>
            </tr>
-           <tr style="border:none;">
+           <tr>
             <td style="border:none;"><input type="radio" name="food" value="f64" >アサリの水煮</td>
             <td style="border:none;"><input type="radio" name="food" value="f65" >キムチ</td>
             <td style="border:none;"><input type="radio" name="food" value="f71" >ピーナッツ</td>
            </tr>
-           <tr style="border:none;">
+           <tr>
             <td style="border:none;"><input type="radio" name="food" value="f80" >のり</td>
+            <td style="border:none;"><input type="radio" name="food" value="f87" >しめじ</td>
+            <td style="border:none;"><input type="radio" name="food" value="f98" >しいたけ</td>
+           </tr>
+           <tr>
+            <td style="border:none;"><input type="radio" name="food" value="f99" >うずらの卵の水煮</td>
+            <td style="border:none;"><input type="radio" name="food" value="f110" >大豆の水煮</td>
+            <td style="border:none;"><input type="radio" name="food" value="f117" >干しエビ</td>
+           </tr>
+           <tr>
+            <td style="border:none;"><input type="radio" name="food" value="f118" >カシューナッツ</td>
            </tr>
           </table>
           </div>
