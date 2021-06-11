@@ -24,7 +24,7 @@
 		<p>${recomend}</p>
 	</div>
 
-<div class="balloon4" >
+<div class="balloon1" >
   タッチして欲しいペコ
 </div>
 
@@ -34,3 +34,6 @@
 </div>
 </main>
 <jsp:include page="/WEB-INF/jsp/footer.jsp"/>
+
+
+
