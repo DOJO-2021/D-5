@@ -6,20 +6,20 @@
 <div class="wrapper">
 <a href="/Harapeko/MainServlet">メインへ戻る</a>
 <h1>どんな気分？</h1>
-
-
+</div>
+<div class="bigtable">
 <form method="POST" action="/Harapeko/SuggestServlet" name="SUGGEST">
 <input type="reset" value="リセット" name="reset">
 <table>
-<tr style="border:none;">
 <td valign="top" style="border:none;">
-<table class="table1">
+<div class="table1">
+<table>
+<tr style="border:none;">
+
+
       <tr style="border:none;">
        <td style="border:none;"><strong>食材</strong></td>
-      </tr>
-      <tr style="border:none;">
-       <td style="border:none;"><strong></strong></td>
-      </tr>
+
       <tr>
         <td style="border:none;">
           <div onclick="obj=document.getElementById('meat').style; obj.display=(obj.display=='none')?'block':'none';">
@@ -146,12 +146,15 @@
         </td>
         </tr>
 </table>
+
+</div>
 </td>
 
 <td valign="top" valign="top"style="border:none;">
-<table class="table2">
+<div class="table2">
+<table>
       <tr style="border:none;">
-       <th style="border:none;">ジャンル</th>
+       <th>ジャンル</th>
          <td>
           <label>
           <select name ="genre">
@@ -165,13 +168,13 @@
         </td>
       </tr>
       <tr>
-        <th style="border:none;">カロリー</th>
+        <th>カロリー</th>
         <td style="border:none;">
           <div>～<input type="text" name="cal">cal</div>
         </td>
       </tr>
       <tr style="border:none;">
-       <th style="border:none;">難易度</th>
+       <th>難易度</th>
         <td>
           <label>
             <select name ="difficulty">
@@ -184,7 +187,7 @@
         </td>
       </tr>
       <tr>
-        <th style="border:none;">はらペコーぬのきまぐれスイッチ</th>
+        <th>はらペコーぬの<br>きまぐれスイッチ</th>
         <td>
          <label>
          <input type="radio" name="feeling" value="yes" checked>ON
@@ -193,13 +196,18 @@
         </td>
       </tr>
 </table>
+</div>
 </td>
 </tr>
-</table>
-<input type="submit"  value="決定" >
-</form>
-</div>
 
+
+
+<input type="submit"  value="決定" >
+</div>
+</table>
+</form>
+
+</div>
 </main>
 
 <jsp:include page="/WEB-INF/jsp/footer.jsp"/>
