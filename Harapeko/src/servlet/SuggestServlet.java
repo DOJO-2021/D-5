@@ -69,6 +69,11 @@ public class SuggestServlet extends HttpServlet {
 		}
 
 		request.setAttribute("dish", dish);
+		request.setAttribute("food", food);
+		request.setAttribute("cal", cal);
+		request.setAttribute("diff", diff);
+		request.setAttribute("genre", genre);
+		request.setAttribute("feeling", feeling);
 
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");

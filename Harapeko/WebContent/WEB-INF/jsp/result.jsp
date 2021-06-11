@@ -72,7 +72,14 @@
 </tr>
 </table>
 </div>
-<button>再提案</button>
+<form method="post" action="/Harapeko/SuggestServlet">
+	<input type="hidden" name="food" value="${food}">
+	<input type="hidden" name="cal" value="${cal}">
+	<input type="hidden" name="difficulty" value="${diff}">
+	<input type="hidden" name="genre" value="${genre}">
+	<input type="hidden" name="feeling" value="${feeling}">
+	<input type="submit" value="再提案">
+</form>
 <a href="/Harapeko/MainServlet">メインへ戻る</a>
 </div>
 </main>
