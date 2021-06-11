@@ -6,10 +6,10 @@
     position:relative;
     width:600px;
     height:110px;
-    background:#FFFF66;
+    background:#D9DCD5;
     padding:10px;
     text-align:left;
-    color:#FFFFFF;
+    color:#312725;
     font-size:20px;
     font-weight:bold;
     border-radius:27px;
@@ -29,11 +29,10 @@
     border-left-width:19px;
     border-right-width:19px;
     margin-left: -19px;
-    border-top-color:#FFFF66;
+    border-top-color:#D9DCD5;
     top:100%;
     left:83%;
 }
-
 
 /*メインメニューのペコ画像*/
 #peko{

@@ -15,7 +15,7 @@
 
 	<div class="dishsuggest">
 		<a href="/Harapeko/SuggestServlet">
-			<img alt="条件入力へ" src="/Harapeko/images/条件入力.jpg">
+			<img alt="条件入力へ" src="/Harapeko/images/条件入力.jpg"class="img_center">
 		</a>
 	</div>
 
@@ -24,8 +24,8 @@
 		<p>${recomend}</p>
 	</div>
 
-		<div id="peko">
-			<a href="/Harapeko/ProfileServlet"><img alt="はらペコーぬ" src="/Harapeko/images/harapekonu1trim.jpg"></a>
+		<div id="peko" class="img_right">
+			<a href="/Harapeko/ProfileServlet"><img alt="はらペコーぬ" src="/Harapeko/images/mainpeko.jpg" ></a>
 		</div>
 
 
