@@ -16,8 +16,6 @@
 <!-- 料理名 -->
   <h3>${dish.name}</h3>
 
-
-
 <div class="table">
 <table style="border:none;">
 <tr style="border:none;">
