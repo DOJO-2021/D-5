@@ -5,7 +5,7 @@
 <body>
 	<header class="header">
 		<div class="logo">
-			<h2><img alt="はらぺこ。" src="/Harapeko/images/logo1_2.jpg"></h2>
+			<h1><img alt="はらぺこ。" src="/Harapeko/images/logo1_2.jpg"></h1>
 		</div>
 	</header>
 
@@ -13,7 +13,7 @@
 <main>
 <div class="wrapper">
 <a href="/Harapeko/MainServlet">メインへ戻る</a>
-<h1>どんな気分？</h1>
+<h2>どんな気分？</h2>
 </div>
 <div class="bigtable">
 <form method="POST" action="/Harapeko/SuggestServlet" name="SUGGEST">

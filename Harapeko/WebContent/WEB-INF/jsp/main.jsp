@@ -6,12 +6,12 @@
 <body>
 	<header class="header">
 		<div class="logo">
-			<h2><img alt="はらぺこ。" src="/Harapeko/images/logo1_2.jpg"></h2>
+			<h1><img alt="はらぺこ。" src="/Harapeko/images/logo1_2.jpg"></h1>
 		</div>
 	</header>
 <main>
 <div class="wrapper">
-	<h1 class="heading">メインメニュー</h1>
+	<h2 class="heading">メインメニュー</h2>
 
 	<div class="dishsuggest">
 		<a href="/Harapeko/SuggestServlet">

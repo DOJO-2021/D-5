@@ -2,12 +2,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="styleSheet" href="/Harapeko/css/common.css">
 <jsp:include page="/WEB-INF/jsp/header.jsp"/>
-
+	<header class="header">
+		<div class="logo">
+			<h1><img alt="はらぺこ。" src="/Harapeko/images/logo1_2.jpg"></h1>
+		</div>
 <main>
 <div class="wrapper">
 <button onclick="javascript:history.back();">前の画面に戻る</button>
-<h1>今日のメニューはこれだ！</h1>
-<h1>${comment}</h1>
+<h2>今日のメニューはこれだ！</h2>
+<h3>${comment}</h3>
 <div class="table">
 <table style="border:none;">
 <tr style="border:none;">
