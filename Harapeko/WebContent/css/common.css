@@ -37,47 +37,12 @@ h2:before {
   border: 4px dotted #733600;
 }
 
-/* 検索結果の一言 */
-
+/* 検索結果料理名 */
+.btn--orange,
 h3 {
-  position: relative;
-  padding: 1.5rem 2rem;
-  border: 3px solid #d8d8d8;
-  border-radius: 10px;
-  background: #f9f9f9;
+  font-size: 26px;
+  border-bottom: 3px solid #000;
 }
-
-h3:before {
-  position: absolute;
-  bottom: -14px;
-  left: 1em;
-  width: 0;
-  height: 0;
-  content: '';
-  border-width: 14px 12px 0 12px;
-  border-style: solid;
-  border-color: #d8d8d8 transparent transparent transparent;
-}
-
-h3:after {
-  position: absolute;
-  bottom: -10px;
-  left: 1em;
-  width: 0;
-  height: 0;
-  content: '';
-  border-width: 14px 12px 0 12px;
-  border-style: solid;
-  border-color: #f9f9f9 transparent transparent transparent;
-}
-/* 右下にコピーライト */
-.footer {
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-}
-
-
 
 /* メニューに戻るの色 */
 a:link {
@@ -102,14 +67,14 @@ a:active {
  text-align:center;
  }
 
-/* 2つのテーブル真ん中 */
+/* 検索  2つのテーブル真ん中 */
  .bigtable {
     width: 900px;/*ポイント03*/
     margin-left: auto;/*ポイント01*/
     margin-right: auto;/*ポイント01*/
  }
 
-/* 左テーブル大きさ */
+/* 検索  左テーブル大きさ */
  .table1{
       width: 500px;/*ポイント03*/
 
@@ -117,19 +82,19 @@ a:active {
     margin-right: auto;/*ポイント01*/
  }
 
-/* 右テーブル大きさ */
+/* 検索  右テーブル大きさ */
  .table2 {
      width: 400px;/*ポイント03*/
     margin-left: auto;/*ポイント01*/
     margin-right: auto;/*ポイント01*/
  }
 
-/* 右テーブル字左揃え */
+/* 検索  右テーブル字左揃え */
 th {
  text-align:left;
 }
 
-/* カロリー枠の大きさ */
+/* 検索  カロリー枠の大きさ */
 input[name=cal] {
   width: 5em;
 }
@@ -160,3 +125,33 @@ div.gazo_no_moji {
  position: absolute;
 }
 
+
+
+
+.balloon1 {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+  border-radius: 15px;
+}
+
+.balloon1:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #e0edff;
+}
+
+.balloon1 p {
+  margin: 0;
+  padding: 0;
+}

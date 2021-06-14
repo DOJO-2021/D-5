@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="styleSheet" href="/Harapeko/css/common.css">
+	<link rel="stylesheet" href="/Harapeko/css/NewFile.css">
 <jsp:include page="/WEB-INF/jsp/header.jsp"/>
 	<header class="header">
 		<div class="logo">
@@ -10,23 +11,34 @@
 <div class="wrapper">
 <button onclick="javascript:history.back();">前の画面に戻る</button>
 <h2>今日のメニューはこれだ！</h2>
-<h3>${comment}</h3>
+<!-- <h3>${comment}</h3> -->
+
+<!-- 料理名 -->
+  <h3>${dish.name}</h3>
+
+
+
 <div class="table">
 <table style="border:none;">
 <tr style="border:none;">
 <td valign="top" style="border:none;">
 <table style="border:none;">
+
+
+  <!--
       <tr style="border:none;">
        <th style="border:none;">料理名</th>
         <td style="border:none;">
           <label>${dish.name}
           </label>
-        </td>
+        </td> -->
+
         <td style="border:none;">
           <label><img src="/Harapeko/${dish.path}">
             </label>
         </td>
-      </tr>
+
+
 </table>
 </td>
 

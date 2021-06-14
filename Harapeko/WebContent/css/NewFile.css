@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 
-/*今日のおすすめ食材*/
+/*今日のおすすめ食材
 .recommend{
     position:relative;
     width:600px;
@@ -33,6 +33,8 @@
     top:100%;
     left:83%;
 }
+*/
+
 
 /*メインメニューのペコ画像*/
 #peko{
@@ -40,3 +42,12 @@ margin-left:20em;
 margin-top:5em;
 }
 
+
+/*リザルト　テーブルの幅・高さ*/
+table {
+    border-collapse:  collapse; /* セルの線を重ねる */
+}
+th {
+    width:  100px;              /* 幅指定 */
+    height: 40px;               /* 高さ指定 */
+}
