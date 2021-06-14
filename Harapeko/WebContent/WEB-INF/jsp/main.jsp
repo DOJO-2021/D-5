@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <jsp:include page="/WEB-INF/jsp/header.jsp"/>
-	<link rel="stylesheet" href="/Harapeko/css/NewFile.css">
+ <!--  	<link rel="stylesheet" href="/Harapeko/css/NewFile.css">-->
 </head>
 <body>
 	<header class="header">
@@ -19,7 +19,9 @@
 		</a>
 	</div>
 
-	<div class="recommend">
+
+
+   <div class="recommend">
 		<p>おすすめ食材は</p>
 		<p>${recomend}</p>
 	</div>
@@ -27,6 +29,7 @@
 		<div id="peko" class="img_right">
 			<a href="/Harapeko/ProfileServlet"><img alt="はらペコーぬ" src="/Harapeko/images/mainpeko.jpg" ></a>
 		</div>
+
 
 
 </div>
