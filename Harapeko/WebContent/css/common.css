@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+/*全てのHTMLに適応される*/
+
+html * {
+	box-sizing: border-box;
+}
+
 
 /* 真ん中にそろえる */
 .wrapper {
@@ -140,7 +146,17 @@ input[type="submit"] { margin-left : 727px ; }
 display: block;
 margin: 0 auto;
 }
-.img_right{
-text-align: right;
+
+
+
+/*はらぺこーぬ吹き出しの中に文字を入れる*/
+div.gazo_ni_moji {
+ position: relative;
+}
+div.gazo_no_moji {
+ font-size: 26px;
+ top: 104px;
+ left: 257px;
+ position: absolute;
 }
 

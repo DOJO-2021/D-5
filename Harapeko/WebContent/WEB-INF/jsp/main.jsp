@@ -19,16 +19,15 @@
 		</a>
 	</div>
 
-
-
-   <div class="recommend">
-		<p>おすすめ食材は</p>
-		<p>${recomend}</p>
-	</div>
-
-		<div id="peko" class="img_right">
+   <!--はらぺこーぬの吹き出しからおすすめ食材 -->
+<div class="gazo_ni_moji">
 			<a href="/Harapeko/ProfileServlet"><img alt="はらペコーぬ" src="/Harapeko/images/mainpeko.jpg" ></a>
+ 		<div class="gazo_no_moji">
+ 		<p>おすすめ食材は</p>
+		<p><strong>${recomend}</strong></p>
 		</div>
+</div>
+
 
 
 
