@@ -60,7 +60,7 @@ public class SuggestServlet extends HttpServlet {
 		List<Dish> dishList;
 
 		//現在気温
-		int temp2= Integer.parseInt(temp);
+		double temp2= Double.parseDouble(temp);
 		String hot_cold = "no";
 
 		if(tSwitch.equals("yes")) {

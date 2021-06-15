@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="styleSheet" href="/Harapeko/css/common.css">
 <jsp:include page="/WEB-INF/jsp/header.jsp"/>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/weather.js"></script>
 </head>
 <body>
 	<header class="header">
@@ -9,7 +11,7 @@
 		</div>
 	</header>
 
-<script type="text/javascript" src="common.js"></script>
+
 <main>
 <div class="wrapper">
 <a href="/Harapeko/MainServlet">メインへ戻る</a>
@@ -236,10 +238,10 @@
       	<th>お天気スイッチ</th>
       		<td>
       		<label>
-      	   		<input type="radio" name="hot_cold" value="yes" checked>ON
-        	 	<input type="radio" name="hot_cold" value="no">OFF
+      	   		<input type="radio" name="t_switch" value="yes" checked>ON
+        	 	<input type="radio" name="t_switch" value="no">OFF
 			<!-- JSを使用し気温を挿入するためのhiddenです -->
-        	 	<input type="hidden" id="temp">
+        	 	<input type="text" name="temp" id="temp">
       		</label>
       		</td>
       </tr>
