@@ -158,6 +158,7 @@ public class SuggestServlet extends HttpServlet {
 			request.setAttribute("genre", genre);
 			request.setAttribute("feeling", feeling);
 			request.setAttribute("comment", peComment);
+			request.setAttribute("tSwitch",tSwitch );
 
 
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
