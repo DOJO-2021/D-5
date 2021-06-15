@@ -77,7 +77,7 @@ a:active {
 
 /* 検索  左テーブル大きさ */
  .table1{
-      width: 500px;/*ポイント03*/
+      width: 550px;/*ポイント03*/
 
     margin-left: auto;/*ポイント01*/
     margin-right: auto;/*ポイント01*/
@@ -85,7 +85,7 @@ a:active {
 
 /* 検索  右テーブル大きさ */
  .table2 {
-     width: 400px;/*ポイント03*/
+     width: 500px;/*ポイント03*/
     margin-left: auto;/*ポイント01*/
     margin-right: auto;/*ポイント01*/
  }
@@ -103,9 +103,11 @@ input[name=cal] {
 .decision{
  text-align:left;
 }
-/* リセット・決定ボタンを右に */
-input[type="reset"] { margin-left : 750px ; }
-input[type="submit"] { margin-left : 750px ; }
+/* リセット・決定ボタン・再提案ボタンの位置調整 */
+input[type="reset"] { margin-left : 800px ; }
+input[type="reset"] { margin-bottom : 30px ; }
+input[type="submit"] { margin-left : 247px ; }
+input[type="submit"] { margin-top : 30px ; }
 
 /*条件入力ボタン画像を中央ぞろえ*/
 .img_center {
@@ -197,5 +199,27 @@ div.gazo_no_moji {
 .button2:hover {
   box-shadow    : none;        /* カーソル時の影消去 */
   opacity       : 0.8;         /* カーソル時透明度 */
+}
+
+/*再提案ボタン*/
+.button3 {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 11pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 9px 22px;   /* 余白       */
+  background    : #ffe4e1;     /* 背景色     */
+  color         : #000000;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 3px 3px 5px #666666;  /* 影の設定 */
+  border        : 2px solid #ffe4e1;    /* 枠の指定 */
+  margin-left : 790px ;
+}
+.button3:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #ffe4e1;     /* 背景色     */
+  background    : #000000;     /* 文字色     */
 }
 

@@ -1,7 +1,17 @@
+'use script'
+
+    let appId = "8cf8297187f7c385c96059cae352789a";
+
     //現在の天気を取得する場所の名前
     let targetCityName = "kamakura";
-    let appId = "8cf8297187f7c385c96059cae352789a";
+
+
+
+
+
 //<input type="hidden" id="temp">
+//      const url = "https://api.openweathermap.org/data/2.5/weather" + "?lat=" + lat + "&lon=" + lng + "&units=metric&APPID=" + appId;
+
 
     const requestUrl = "https://api.openweathermap.org/data/2.5/weather?APPID=" + appId + "&lang=ja&units=metric&q=" + targetCityName + ",jp;";
 
