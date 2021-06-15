@@ -12,7 +12,7 @@ import model.Dish;
 
 
 public class DSuggestDAO {
-	public List<Dish> select(Dish dish,String food) {
+	public List<Dish> select(Dish dish,String food,String hot_cold) {
 		Connection conn = null;
 
 		List<Dish> dishList = new ArrayList<Dish>();
@@ -23,9 +23,9 @@ public class DSuggestDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-5/data", "sa", "sa");
 
 			//SQL文
-			String sql = "select distinct md.dish_id, md.dish_name, md.img_path, md.dish_genre, md.difficulty, md.cal, md.url from dish_details as dd, m_dish as md, m_food as mf"
+			String sql = "select distinct md.dish_id, md.dish_name, md.img_path, md.dish_genre, md.difficulty, md.cal, md.url FROM dish_details as dd, m_dish as md, m_food as mf"
 					+ " where dd.dish_id = md.dish_id AND dd.food_id = mf.food_id"
-					+ " and md.CAL <= ? and md.DISH_GENRE like ? and md.DIFFICULTY like ? and mf.food_id like ? and md.dish_id like ?;";
+					+ " and md.CAL <= ? and md.DISH_GENRE like ? and md.DIFFICULTY like ? and mf.food_id like ? and md.dish_id like ? ? ;";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL完成させる "%"+ + "%"
@@ -45,6 +45,14 @@ public class DSuggestDAO {
 				}
 
 				pStmt.setString(5, "%" + dish.getId() + "%");
+
+				if(hot_cold.equals("no")) {
+					pStmt.setString(6,"");
+				}else {
+					pStmt.setString(6,"AND md." + hot_cold + "=1" );
+				}
+
+
 
 
 
