@@ -13,7 +13,7 @@
 		</header>
 <main>
 <div class="wrapper">
-<button onclick="javascript:history.back();">前の画面に戻る</button>
+<button onclick="javascript:history.back();" class="button2">前の画面に戻る</button>
 <h2>今日のメニューはこれだ！</h2>
 <!-- <h3>${comment}</h3> -->
 
@@ -99,7 +99,7 @@
 	<input type="hidden" name="t_switch" value="${t_switch}">
 	<input type="hidden" name="temp" id="temp">
 
-	<input type="submit" value="再提案">
+	<input type="submit" value="再提案"  class="button3">
 </form>
 <a href="/Harapeko/MainServlet">メインへ戻る</a>
 </div>
