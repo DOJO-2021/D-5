@@ -241,7 +241,7 @@
       	   		<input type="radio" name="t_switch" value="yes" checked>ON
         	 	<input type="radio" name="t_switch" value="no">OFF
 			<!-- JSを使用し気温を挿入するためのhiddenです -->
-        	 	<input type="text" name="temp" id="temp">
+        	 	<input type="hidden" name="temp" id="temp">
       		</label>
       		</td>
       </tr>

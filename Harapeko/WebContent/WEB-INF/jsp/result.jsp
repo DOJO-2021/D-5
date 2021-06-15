@@ -96,7 +96,7 @@
 	<input type="hidden" name="difficulty" value="${diff}">
 	<input type="hidden" name="genre" value="${genre}">
 	<input type="hidden" name="feeling" value="${feeling}">
-	<input type="hidden" name="tSwitch" value="${tSwitch}">
+	<input type="hidden" name="t_switch" value="${t_switch}">
 	<input type="hidden" name="temp" id="temp">
 
 	<input type="submit" value="再提案">
