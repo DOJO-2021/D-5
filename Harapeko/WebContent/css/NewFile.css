@@ -42,9 +42,6 @@ margin-left:20em;
 margin-top:5em;
 }
 
-@charset "UTF-8";
-
-
 /*今日のおすすめ食材*/
 .recommend{
     position:relative;
@@ -90,6 +87,25 @@ table {
     border-collapse:  collapse; /* セルの線を重ねる */
 }
 th {
-    width:  100px;              /* 幅指定 */
+    width:  115px;              /* 幅指定 */
     height: 40px;               /* 高さ指定 */
+    text-align: center;
 }
+
+/*リザルト　テーブルの線と色*/
+
+table {
+    border-collapse: collapse;
+}
+
+table,th{
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+.td2 {
+	border-bottom: 1px solid black;
+    padding: 10px;
+    }
+
+th{ background-color: #f5f5f5; }
+

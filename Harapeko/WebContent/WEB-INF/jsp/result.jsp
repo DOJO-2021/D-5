@@ -7,6 +7,7 @@
 		<div class="logo">
 			<h1><img alt="はらぺこ。" src="/Harapeko/images/logo1_2.jpg"></h1>
 		</div>
+		</header>
 <main>
 <div class="wrapper">
 <button onclick="javascript:history.back();">前の画面に戻る</button>
@@ -14,7 +15,7 @@
 <!-- <h3>${comment}</h3> -->
 
 <!-- 料理名 -->
-  <h3>${dish.name}</h3>
+  <h3>  ${dish.name}  </h3>
 
 <div class="table">
 <table style="border:none;">
@@ -31,50 +32,51 @@
           </label>
         </td> -->
 
-        <td style="border:none;">
-          <label><img src="/Harapeko/${dish.path}">
-            </label>
-        </td>
+        <tr>
+         <img src="/Harapeko/${dish.path}">
+
+        </tr>
 
 
 </table>
 </td>
 
-<td valign="top" style="border:none;">
-<table style="border:none;">
-	  <tr style="border:none;">
-	   <th style="border:none;">食材</th>
-        <td style="border:none;">
+<td>
+<table>
+	  <tr>
+	   <th>食材</th>
+        <td class="td2">
          <label><c:forEach var="food" items="${dish.foodList}">
          <p>${food.name}
           </p>
           </c:forEach></label>
         </td>
       </tr>
-      <tr style="border:none;">
-       <th style="border:none;">ジャンル</th>
-        <td style="border:none;">
+
+      <tr>
+       <th>ジャンル</th>
+        <td class="td2">
           <label>${dish.genre}
           </label>
         </td>
       </tr>
       <tr>
-        <th style="border:none;">カロリー</th>
-        <td style="border:none;">
-          <label>${dish.cal}
+        <th>カロリー</th>
+        <td class="td2">
+          <label>${dish.cal} kcal
           </label>
         </td>
       </tr>
-      <tr style="border:none;">
-       <th style="border:none;">難易度</th>
-        <td style="border:none;">
+      <tr >
+       <th >難易度</th>
+        <td class="td2">
           <label>${dish.diff}
           </label>
         </td>
       </tr>
       <tr>
-        <th style="border:none;">作り方URL</th>
-         <td style="border:none;">
+        <th>作り方URL</th>
+         <td class="td2">
           <label><a href="${dish.url}">${dish.url}</a>
           </label>
          </td>

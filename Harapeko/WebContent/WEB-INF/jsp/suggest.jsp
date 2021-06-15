@@ -233,6 +233,17 @@
         </td>
       </tr>
       <tr>
+      	<th>お天気スイッチ</th>
+      		<td>
+      		<label>
+      	   		<input type="radio" name="hot_cold" value="yes" checked>ON
+        	 	<input type="radio" name="hot_cold" value="no">OFF
+			<!-- JSを使用し気温を挿入するためのhiddenです -->
+        	 	<input type="hidden" id="temp">
+      		</label>
+      		</td>
+      </tr>
+      <tr>
         <th>はらペコーぬの<br>きまぐれスイッチ</th>
         <td>
          <label>
