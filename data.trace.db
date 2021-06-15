@@ -1,0 +1,8 @@
+2021-06-15 14:23:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "M_FOOD" が見つかりません
+Table "M_FOOD" not found; SQL statement:
+select food_id, food_name from m_food where judge= 'true' [42102-199]
+2021-06-15 14:24:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "M_FOOD" が見つかりません
+Table "M_FOOD" not found; SQL statement:
+select food_id, food_name from m_food where judge= 'true' [42102-199]
