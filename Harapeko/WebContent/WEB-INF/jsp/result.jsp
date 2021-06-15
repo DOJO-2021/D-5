@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<jsp:include page="/WEB-INF/jsp/header.jsp"/>
+<script type="text/javascript" src="js/weather.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
 <link rel="styleSheet" href="/Harapeko/css/common.css">
 	<link rel="stylesheet" href="/Harapeko/css/NewFile.css">
-<jsp:include page="/WEB-INF/jsp/header.jsp"/>
 	<header class="header">
 		<div class="logo">
 			<h1><img alt="はらぺこ。" src="/Harapeko/images/logo1_2.jpg"></h1>
@@ -93,6 +96,9 @@
 	<input type="hidden" name="difficulty" value="${diff}">
 	<input type="hidden" name="genre" value="${genre}">
 	<input type="hidden" name="feeling" value="${feeling}">
+	<input type="hidden" name="t_switch" value="${t_switch}">
+	<input type="hidden" name="temp" id="temp">
+
 	<input type="submit" value="再提案">
 </form>
 <a href="/Harapeko/MainServlet">メインへ戻る</a>

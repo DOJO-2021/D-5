@@ -16,6 +16,12 @@ public class DSuggestDAO {
 		Connection conn = null;
 
 		List<Dish> dishList = new ArrayList<Dish>();
+		String aaa;
+		if(hot_cold.equals("no")) {
+			aaa="";
+		}else {
+			aaa=" AND md." + hot_cold + "='true'";
+		}
 
 		try {
 			Class.forName("org.h2.Driver");
@@ -25,7 +31,8 @@ public class DSuggestDAO {
 			//SQL文
 			String sql = "select distinct md.dish_id, md.dish_name, md.img_path, md.dish_genre, md.difficulty, md.cal, md.url FROM dish_details as dd, m_dish as md, m_food as mf"
 					+ " where dd.dish_id = md.dish_id AND dd.food_id = mf.food_id"
-					+ " and md.CAL <= ? and md.DISH_GENRE like ? and md.DIFFICULTY like ? and mf.food_id like ? and md.dish_id like ? ? ;";
+					+ " and md.CAL <= ? and md.DISH_GENRE like ? and md.DIFFICULTY like ? and mf.food_id like ? and md.dish_id like ?"
+					+ aaa +";";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL完成させる "%"+ + "%"
@@ -45,14 +52,6 @@ public class DSuggestDAO {
 				}
 
 				pStmt.setString(5, "%" + dish.getId() + "%");
-
-				if(hot_cold.equals("no")) {
-					pStmt.setString(6,"");
-				}else {
-					pStmt.setString(6,"AND md." + hot_cold + "=1" );
-				}
-
-
 
 
 
