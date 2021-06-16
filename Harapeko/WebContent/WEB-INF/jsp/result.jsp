@@ -18,10 +18,10 @@
 <!-- <h3>${comment}</h3> -->
 
 <!-- 料理名 -->
-  <h3>  ${dish.name}  </h3>
+  <h3>  &emsp; ${dish.name}  </h3>
 
 <div class="table">
-<table style="border:none;">
+<table style="border:none;" class="r_table">
 <tr style="border:none;">
 <td valign="top" style="border:none;">
 <table style="border:none;">
