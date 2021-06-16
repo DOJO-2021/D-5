@@ -28,8 +28,8 @@ public class ColumnServlet extends HttpServlet {
 		// コラムをランダムで1つ表示
 		ColumnDAO CDao = new ColumnDAO();
 		List<Column> columnList = CDao.select();
-		Column recommend = columnList.get((int)(Math.random() * columnList.size()));
-		request.setAttribute("column", columnList );
+		Column column = columnList.get((int)(Math.random() * columnList.size()));
+		request.setAttribute("column", column );
 
 		// コラムページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/column.jsp");

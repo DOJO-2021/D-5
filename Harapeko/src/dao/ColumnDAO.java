@@ -8,7 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Food;
+import model.Column;
+
 
 public class ColumnDAO {
 
@@ -35,8 +36,8 @@ public class ColumnDAO {
 			while (rs.next()) {
 				Column column = new Column(
 				rs.getString("id"),
-				rs.getString("title")
-                                rs.getString("content")
+				rs.getString("title"),
+                rs.getString("content")
                                 );
 				columnList.add(column);
 			}
@@ -57,7 +58,7 @@ public class ColumnDAO {
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
-					columndList = null;
+					columnList = null;
 				}
 			}
 		}
