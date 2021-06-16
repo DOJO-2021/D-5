@@ -11,8 +11,9 @@
 <main>
 	<div class="wrapper">
 		<h2 class="heading">豆知識</h2>
-
-
+		<p><strong>${column}</strong></p>
 	</div>
+
+
 </main>
 <jsp:include page="/WEB-INF/jsp/footer.jsp"/>
