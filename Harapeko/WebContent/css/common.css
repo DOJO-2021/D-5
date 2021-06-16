@@ -14,7 +14,7 @@ html * {
 
 }
 
-/* 真ん中にそろえる */
+/* ロゴ真ん中にそろえる */
 h1 {
 	margin: 50px 0 40px 0;
 	line-height: 0;
@@ -38,12 +38,16 @@ h2:before {
   border: 4px dotted #733600;
 }
 
+
+
 /* 検索結果料理名 */
 .btn--orange,
 h3 {
   font-size: 26px;
   border-bottom: 3px solid #000;
 }
+
+
 
 /* メニューに戻るの色 */
 a:link {
@@ -63,10 +67,17 @@ a:active {
   text-decoration: none;
 }
 
-/* プロフィールキャラ真ん中 */
+
+
+
+/* プロフィール画像真ん中 */
 .hara {
  text-align:center;
  }
+
+
+
+
 
 /* 検索  2つのテーブル真ん中 */
  .bigtable {
@@ -83,6 +94,21 @@ a:active {
     margin-right: auto;/*ポイント01*/
  }
 
+
+/*テーブル１のセル大きさを均等に
+.table1 {
+   table-layout: fixed;
+   width: 100%;
+}
+
+
+td {
+width: 100px;
+height: 50px;
+}
+
+
+
 /* 検索  右テーブル大きさ */
  .table2 {
      width: 500px;/*ポイント03*/
@@ -95,21 +121,81 @@ th {
  text-align:left;
 }
 
-/* 検索  カロリー枠の大きさ */
+/* 検索  右テーブル カロリー枠の大きさ */
 input[name=cal] {
   width: 5em;
 }
 
+
+/* 検索 右テーブルの項目たち*/
+
+.table2_1{
+	border-collapse: collapse;
+}
+.table2_1 th , .table2_1 td{
+	padding: 8px;
+}
+
+/* 検索 食材テーブルの項目のアイコン*/
+.title {
+    padding-left: 18px;
+    line-height: 18px;
+    background: url(../images/矢印ボタン.png) no-repeat;
+}
+
+/* 検索 右テーブルの項目のアイコン*/
+.title2 {
+  position: relative;
+  padding: 0 0 0 40px;
+}
+.title2:before {
+  position: relative;
+  top: 4px;
+  margin: 0 10px 0 0;
+  content: url('../images/矢印ボタン.png');
+}
+
+
+
+
 .decision{
  text-align:left;
 }
-/* リセット・決定ボタン・再提案ボタンの位置調整 */
-input[type="reset"] { margin-left : 800px ; }
-input[type="reset"] { margin-bottom : 30px ; }
-input[type="submit"] { margin-left : 247px ; }
-input[type="submit"] { margin-top : 30px ; }
 
-/*条件入力ボタン画像を中央ぞろえ*/
+
+
+/*検索 食材テーブルの各セルの幅を指定*/
+td.t_width{
+	width: 170px;
+}
+/*検索 食材テーブルの項目*/
+.category{
+    background-color:#f5f5f5;/*背景色グレー*/
+    padding-top:    5px;
+    padding-right:  10px;
+    padding-bottom: 5px;
+    padding-left:   10px;
+
+}
+
+
+/* リセット・再提案ボタンの位置調整 */
+input[type="reset"] { margin-left : 800px ; }/*リセットボタンの位置調整*/
+input[type="reset"] { margin-bottom : 30px ; }/*リセットボタンの位置調整*/
+input[type="submit"] { margin-left : 790px ; }/*再提案ボタンの位置調整*/
+input[type="submit"] { margin-top : 30px ; }/*再提案ボタンの位置調整*/
+input.button { margin-left : 243px ; }
+input.button { margin-bottom : 30px ; }
+
+
+/*決定ボタンの位置調整
+.button{
+  position: absolute;
+  top: 130%;
+  right: 240px;/*右からの距離*/
+ */
+
+/*メイン条件入力ボタン画像を中央ぞろえ*/
 .img_center {
 display: block;
 margin: 0 auto;
@@ -117,7 +203,7 @@ margin: 0 auto;
 
 
 
-/*はらぺこーぬ吹き出しの中に文字を入れる*/
+/*メインはらぺこーぬ吹き出しの中に文字を入れる*/
 div.gazo_ni_moji {
  position: relative;
 }
@@ -129,35 +215,6 @@ div.gazo_no_moji {
 }
 
 
-
-
-.balloon1 {
-  position: relative;
-  display: inline-block;
-  margin: 1.5em 0;
-  padding: 7px 10px;
-  min-width: 120px;
-  max-width: 100%;
-  color: #555;
-  font-size: 16px;
-  background: #e0edff;
-  border-radius: 15px;
-}
-
-.balloon1:before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -15px;
-  border: 15px solid transparent;
-  border-top: 15px solid #e0edff;
-}
-
-.balloon1 p {
-  margin: 0;
-  padding: 0;
-}
 
 /*決定ボタン*/
 .button {
@@ -222,4 +279,3 @@ div.gazo_no_moji {
   color         : #ffe4e1;     /* 背景色     */
   background    : #000000;     /* 文字色     */
 }
-

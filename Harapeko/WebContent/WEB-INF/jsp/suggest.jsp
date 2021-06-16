@@ -28,11 +28,12 @@
 
 
       <tr style="border:none;">
-       <td style="border:none;"><strong>食材</strong></td>
+       <td style="border:none;"	 class="title"><strong>食材</strong></td>
 
       <tr>
-        <td style="border:none;">
-          <div onclick="obj=document.getElementById('meat').style; obj.display=(obj.display=='none')?'block':'none';">
+        <td style="border:none;" >
+          <div onclick="obj=document.getElementById('meat').style; obj.display=(obj.display=='none')?'block':'none';"
+           class="category">
               <a style="cursor:pointer;">肉🍖</a>
           </div>
 <!--// 折り畳み展開ポインタ -->
@@ -44,38 +45,34 @@
 <!--//行を追加する場合、<tr><td></td></tr>を追加 -->
           <table>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="f23">鶏もも肉</td>
-            <td style="border:none;"><input type="radio" name="food" value="f104" >鶏むね肉</td>
-            <td style="border:none;"><input type="radio" name="food" value="f95" >豚こま切れ</td>
+            <td style="border:none;" class="t_width"><input type="radio" name="food" value="f23">鶏もも肉</td>
+            <td style="border:none;" class="t_width"><input type="radio" name="food" value="f104" >鶏むね肉</td>
+            <td style="border:none;" class="t_width"><input type="radio" name="food" value="f95" >豚こま切れ</td>
            </tr>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="f24" >豚ロース（薄切り）</td>
-            <td style="border:none;"><input type="radio" name="food" value="f29" >豚ロース（厚切り）</td>
-            <td style="border:none;"><input type="radio" name="food" value="f111" >豚肩ロース</td>
+            <td style="border:none;" class="t_width"><input type="radio" name="food" value="f24" >豚ロース（薄切り）</td>
+            <td style="border:none;" class="t_width"><input type="radio" name="food" value="f29" >豚ロース（厚切り）</td>
+            <td style="border:none;" class="t_width"><input type="radio" name="food" value="f111" >豚肩ロース</td>
            </tr>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="f56" >豚バラ肉</td>
-            <td style="border:none;"><input type="radio" name="food" value="f81" >牛バラ肉（薄切り）</td>
-            <td style="border:none;"><input type="radio" name="food" value="f85" >牛もも肉（薄切り）</td>
+            <td style="border:none;" class="t_width"><input type="radio" name="food" value="f56" >豚バラ肉</td>
+            <td style="border:none;" class="t_width"><input type="radio" name="food" value="f81" >牛バラ肉（薄切り）</td>
+            <td style="border:none;" class="t_width"><input type="radio" name="food" value="f85" >牛もも肉（薄切り）</td>
            </tr>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="f159" >牛こま切れ</td>
-            <td style="border:none;"><input type="radio" name="food" value="f31" >ひき肉</td>
-            <td style="border:none;"><input type="radio" name="food" value="f156" >レバー</td>
-           </tr>
-           <tr>
-            <td style="border:none;"><input type="radio" name="food" value="f145" >ハム</td>
-            <td style="border:none;"><input type="radio" name="food" value="f93" >ウインナー</td>
-            <td style="border:none;"><input type="radio" name="food" value="f35" >ベーコン</td>
+            <td style="border:none;" class="t_width"><input type="radio" name="food" value="f31" >ひき肉</td>
+            <td style="border:none;" class="t_width"><input type="radio" name="food" value="f93" >ウインナー</td>
+            <td style="border:none;" class="t_width"><input type="radio" name="food" value="f35" >ベーコン</td>
            </tr>
           </table>
           </div>
         </td>
         </tr>
         <tr>
-        <td style="border:none;">
-          <div onclick="obj=document.getElementById('fish').style; obj.display=(obj.display=='none')?'block':'none';">
-              <a style="cursor:pointer;">魚介類🐡</a>
+        <td style="border:none;" >
+          <div onclick="obj=document.getElementById('fish').style; obj.display=(obj.display=='none')?'block':'none';"
+          class="category">
+              <a style="cursor:pointer;" >魚介類🐡</a>
           </div>
 <!--// 折り畳み展開ポインタ -->
 
@@ -86,19 +83,17 @@
 <!--//行を追加する場合、<tr><td>～</td></tr>を追加 -->
            <table style="bordder:none;">
             <tr>
-             <td style="border:none;"><input type="radio" name="food" value="f25">ブリ</td>
-             <td style="border:none;"><input type="radio" name="food" value="f27" >アジ</td>
-             <td style="border:none;"><input type="radio" name="food" value="f53" >エビ</td>
+             <td style="border:none;"class="t_width"><input type="radio" name="food" value="f25">ブリ</td>
+             <td style="border:none;"class="t_width"><input type="radio" name="food" value="f27" >アジ</td>
+             <td style="border:none;"class="t_width"><input type="radio" name="food" value="f53" >エビ</td>
             </tr>
             <tr>
-             <td style="border:none;"><input type="radio" name="food" value="f70">桜エビ</td>
-             <td style="border:none;"><input type="radio" name="food" value="f83" >サバ</td>
-             <td style="border:none;"><input type="radio" name="food" value="f90" >シャケ</td>
+             <td style="border:none;"class="t_width"><input type="radio" name="food" value="f70">桜エビ</td>
+             <td style="border:none;"class="t_width"><input type="radio" name="food" value="f83" >サバ</td>
+             <td style="border:none;"class="t_width"><input type="radio" name="food" value="f90" >シャケ</td>
             </tr>
             <tr>
              <td style="border:none;"><input type="radio" name="food" value="f97" >イカ</td>
-             <td style="border:none;"><input type="radio" name="food" value="f123" >マグロ</td>
-             <td style="border:none;"><input type="radio" name="food" value="f137" >アサリ</td>
             </tr>
            </table>
           </div>
@@ -106,7 +101,8 @@
         </tr>
         <tr>
         <td style="border:none;">
-          <div onclick="obj=document.getElementById('vegetable').style; obj.display=(obj.display=='none')?'block':'none';">
+          <div onclick="obj=document.getElementById('vegetable').style; obj.display=(obj.display=='none')?'block':'none';"
+          class="category">
               <a style="cursor:pointer;">野菜🥬</a>
           </div>
 <!--// 折り畳み展開ポインタ -->
@@ -118,59 +114,47 @@
 <!--//行を追加する場合、<tr><td></td></tr>を追加 -->
           <table style="border:none;">
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="f114" >赤パプリカ</td>
-            <td style="border:none;"><input type="radio" name="food" value="f141" >アスパラガス</td>
-            <td style="border:none;"><input type="radio" name="food" value="f109" >アボカド</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f26" >大根</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f30" >ピーマン</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f34" >玉ねぎ</td>
            </tr>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="f79" >大葉</td>
-            <td style="border:none;"><input type="radio" name="food" value="f113" >かいわれ大根</td>
-            <td style="border:none;"><input type="radio" name="food" value="f57" >キャベツ</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f36" >ミックスベジタブル</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f42" >にんじん</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f47">ブロッコリー</td>
            </tr>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="f150" >きゅうり</td>
-            <td style="border:none;"><input type="radio" name="food" value="f149" >グリンピース</td>
-            <td style="border:none;"><input type="radio" name="food" value="f103" >小ネギ</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f54" >長ネギ</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f57" >キャベツ</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f61" >ニラ</td>
            </tr>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="f112" >サンチュ</td>
-            <td style="border:none;"><input type="radio" name="food" value="f86" >じゃがいも</td>
-            <td style="border:none;"><input type="radio" name="food" value="f26" >大根</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f69" >もやし</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f75" >トマト</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f77" >パクチー</td>
            </tr>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="f34" >玉ねぎ</td>
-            <td style="border:none;"><input type="radio" name="food" value="f152" >チンゲン菜</td>
-            <td style="border:none;"><input type="radio" name="food" value="f75" >トマト</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f79" >大葉</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f86" >じゃがいも</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f96" >白菜</td>
            </tr>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="f54" >長ネギ</td>
-            <td style="border:none;"><input type="radio" name="food" value="f126" >ナス</td>
-            <td style="border:none;"><input type="radio" name="food" value="f61" >ニラ</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f103" >小ネギ</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f107" >レタス</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f109" >アボカド</td>
            </tr>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="f42" >にんじん</td>
-            <td style="border:none;"><input type="radio" name="food" value="f96" >白菜</td>
-            <td style="border:none;"><input type="radio" name="food" value="f77" >パクチー</td>
-           </tr>
-           <tr>
-            <td style="border:none;"><input type="radio" name="food" value="f30" >ピーマン</td>
-            <td style="border:none;"><input type="radio" name="food" value="f47">ブロッコリー</td>
-            <td style="border:none;"><input type="radio" name="food" value="f120" >ほうれん草</td>
-           </tr>
-           <tr>
-            <td style="border:none;"><input type="radio" name="food" value="f36" >ミックスベジタブル</td>
-            <td style="border:none;"><input type="radio" name="food" value="f69" >もやし</td>
-            <td style="border:none;"><input type="radio" name="food" value="f107" >レタス</td>
-           </tr>
-           <tr>
-            <td style="border:none;"><input type="radio" name="food" value="f129" >レンコン</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f112" >サンチュ</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f113" >かいわれ大根</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f114" >赤パプリカ</td>
            </tr>
           </table>
         </div>
         </td>
         <tr>
         <td style="border:none;">
-          <div onclick="obj=document.getElementById('other').style; obj.display=(obj.display=='none')?'block':'none';">
+          <div onclick="obj=document.getElementById('other').style; obj.display=(obj.display=='none')?'block':'none';"
+          class="category">
               <a style="cursor:pointer;">穀類🍚・乳製品🥛・その他</a>
           </div>
 <!--// 折り畳み展開ポインタ -->
@@ -182,27 +166,32 @@
 <!--//行を追加する場合、<tr><td></td></tr>を追加 -->
           <table style="border:none;">
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="f28" >たまご</td>
-            <td style="border:none;"><input type="radio" name="food" value="f32" >牛乳</td>
-            <td style="border:none;"><input type="radio" name="food" value="f37" >生クリーム</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f28" >たまご</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f32" >牛乳</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f37" >生クリーム</td>
            </tr>
            <tr style="border:none;">
-            <td style="border:none;"><input type="radio" name="food" value="f40" >チーズ</td>
-            <td style="border:none;"><input type="radio" name="food" value="f65" >キムチ</td>
-            <td style="border:none;"><input type="radio" name="food" value="f63" >豆腐</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f40" >チーズ</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f59" >タケノコの水煮</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f63" >豆腐</td>
            </tr>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="f153" >きくらげ</td>
-            <td style="border:none;"><input type="radio" name="food" value="f130" >えのき</td>
-            <td style="border:none;"><input type="radio" name="food" value="f144" >ホワイトマッシュルーム</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f64" >アサリの水煮</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f65" >キムチ</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f71" >ピーナッツ</td>
            </tr>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="f98" >しいたけ</td>
-            <td style="border:none;"><input type="radio" name="food" value="f87" >しめじ</td>
-            <td style="border:none;"><input type="radio" name="food" value="f80" >のり</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f80" >のり</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f87" >しめじ</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f98" >しいたけ</td>
            </tr>
            <tr>
-            <td style="border:none;"><input type="radio" name="food" value="f131" >しらたき</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f99" >うずらの卵の水煮</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f110" >大豆の水煮</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f117" >干しエビ</td>
+           </tr>
+           <tr>
+            <td style="border:none;"><input type="radio" name="food" value="f118" >カシューナッツ</td>
            </tr>
           </table>
           </div>
@@ -215,9 +204,9 @@
 
 <td valign="top" valign="top"style="border:none;">
 <div class="table2">
-<table>
+<table class="table2_1">
       <tr style="border:none;">
-       <th>ジャンル</th>
+       <th class="title2">ジャンル</th>
          <td>
           <label>
           <select name ="genre">
@@ -231,13 +220,13 @@
         </td>
       </tr>
       <tr>
-        <th>カロリー</th>
+        <th class="title2">カロリー</th>
         <td style="border:none;">
           <div>～<input type="text" name="cal">cal</div>
         </td>
       </tr>
       <tr style="border:none;">
-       <th>難易度</th>
+       <th class="title2">難易度</th>
         <td>
           <label>
             <select name ="difficulty">
@@ -250,7 +239,7 @@
         </td>
       </tr>
       <tr>
-      	<th>お天気スイッチ</th>
+      	<th class="title2">お天気スイッチ</th>
       		<td>
       		<label>
       	   		<input type="radio" name="t_switch" value="yes" checked>ON
@@ -261,7 +250,7 @@
       		</td>
       </tr>
       <tr>
-        <th>はらペコーぬの<br>きまぐれスイッチ</th>
+        <th class="title2">はらペコーぬの<br> &emsp;&ensp; きまぐれスイッチ</th>
         <td>
          <label>
          <input type="radio" name="feeling" value="yes" checked>ON
@@ -276,10 +265,7 @@
 </tr>
 </div>
 </table>
-
-
 </form>
-
 </div>
 </main>
 
