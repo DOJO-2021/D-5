@@ -31,7 +31,7 @@ public class ColumnServlet extends HttpServlet {
 		Column recommend = columnList.get((int)(Math.random() * columnList.size()));
 		request.setAttribute("column", columnList );
 
-		// メインページにフォワードする
+		// コラムページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/column.jsp");
 		dispatcher.forward(request, response);
 	}

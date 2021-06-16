@@ -19,6 +19,11 @@
 		</a>
 	</div>
 
+		<a href="/Harapeko/GalleryServlet">ギャラリー</a>
+
+		<a href="/Harapeko/ColumnServlet">コラム</a>
+
+
    <!--はらぺこーぬの吹き出しからおすすめ食材 -->
 <div class="gazo_ni_moji">
 			<a href="/Harapeko/ProfileServlet"><img alt="はらペコーぬ" src="/Harapeko/images/mainpeko.jpg" ></a>

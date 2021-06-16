@@ -10,8 +10,11 @@
 	</header>
 <main>
 	<div class="wrapper">
-		<h2 class="heading">豆知識</h2>
+	<a href="/Harapeko/MainServlet">メインへ戻る</a>
+		<h2 class="heading">コラム</h2>
 		<p><strong>${column}</strong></p>
+
+		<p>img alt="はらペコーぬ" src="/Harapeko/images/mainpeko.jpg" ></p>
 	</div>
 
 
