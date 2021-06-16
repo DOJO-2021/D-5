@@ -10,8 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.FSuggestDAO;
-import model.Food;
+import dao.ColumnDAO;
+import model.Column;
+
 
 /**
  * Servlet implementation class ColumnServlet
@@ -25,10 +26,10 @@ public class ColumnServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// コラムをランダムで1つ表示
-		FSuggestDAO FDao = new FSuggestDAO();
-		List<Food> foodList = FDao.select();
-		Food recommend = foodList.get((int)(Math.random() * foodList.size()));
-		request.setAttribute("recomend", recommend.getName() );
+		ColumnDAO CDao = new ColumnDAO();
+		List<Column> columnList = CDao.select();
+		Column recommend = columnList.get((int)(Math.random() * columnList.size()));
+		request.setAttribute("column", columnList );
 
 		// メインページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/column.jsp");
