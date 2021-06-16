@@ -16,7 +16,7 @@ public class ColumnDAOTest {
 			for (Column column : columnList2) {
 				System.out.println(column.getId());
 				System.out.println(column.getTitle());
-                                System.out.println(column.getContent());
+                System.out.println(column.getContent());
 
 				System.out.println();
 			}
