@@ -4,11 +4,13 @@
 div.menus{
 	position: absolute;
 	left: 600px;
-    top: 300px;
+    top: 700px;
 }
 
 .menu{
     border-radius: 50%;
     width:  80px;
     height: 80px;
+    padding: 2px;
+    border: 1px solid white;
 }

@@ -31,7 +31,28 @@
 			</c:forEach>
 		</div>
 
-
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 	</div>
 </main>
 <jsp:include page="/WEB-INF/jsp/footer.jsp"/>
