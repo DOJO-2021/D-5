@@ -271,12 +271,11 @@
       </tr>
 </table>
 </div>
+<div class="decision"><input type="submit" value="決定" class="button"></div>
 </td>
 </tr>
 </div>
 </table>
-
-<div class="decision"><input type="submit" value="決定" class="button"></div>
 
 
 </form>
