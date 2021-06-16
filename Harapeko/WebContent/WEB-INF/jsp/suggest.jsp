@@ -277,8 +277,6 @@
 </div>
 </table>
 
-<div class="decision"><input type="submit" value="決定" class="button"></div>
-
 
 </form>
 
