@@ -29,7 +29,7 @@ public class Dish implements Serializable{
 		this.name = "";
 		this.path = "";
 		this.genre = "";
-		this.cal = 0;
+		this.cal = 10000;
 		this.diff = "";
 		this.url = "";
 		this.foodList = new ArrayList<>();
