@@ -14,7 +14,7 @@
 	<h2 class="heading">メインメニュー</h2>
 
 	<div class="poem">
-	<p class="poem1"><strong>あなたの自炊は、ボタンを１つ押すところから。</strong></p>
+	<p class="poem1"><strong>あなたの自炊は、ボタンをひとつ押すところから。</strong></p>
     <p>「またカレーかぁ」</p>
 	<p>今日も日本のどこかで誰かがつぶやいています。</p>
 	<p>毎回作る料理を決めるのって本当に大変。</p>
