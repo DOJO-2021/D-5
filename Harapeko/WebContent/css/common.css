@@ -40,7 +40,13 @@ h2:before {
   border: 4px dotted #733600;
 }
 
+h2{
+	margin-top: 20px;
+	margin-right: 5px;
+	margin-bottom: 60px;
+	margin-left: 5px;
 
+}
 
 /* 検索結果料理名 */
 .btn--orange,
@@ -135,7 +141,7 @@ input[name=cal] {
 	border-collapse: collapse;
 }
 .table2_1 th , .table2_1 td{
-	padding: 8px;
+	padding: 10px;
 }
 
 /* 検索 食材テーブルの項目のアイコン*/
@@ -157,8 +163,10 @@ input[name=cal] {
   content: url('../images/矢印ボタン.png');
 }
 
-
-
+/*天気スイッチ注釈*/
+.tenki{
+font-size: small
+}
 
 .decision{
  text-align:left;
@@ -202,9 +210,12 @@ input.button { margin-bottom : 30px ; }
 display: block;
 margin: 0 auto;
 }
-
 .dishsuggest{
-	text-align : center
+	text-align : center;
+    margin-top: 40px;
+	margin-right: 20px;
+	margin-bottom: 30px;
+	margin-left: 20px;
 }
 
 /*メインはらぺこーぬ吹き出しの中に文字を入れる*/
@@ -500,7 +511,9 @@ a.btn_02_a:hover span:after {
 /* ポエムの1行目太文字 */
 .poem{
 	text-align:center
+
 }
+
 .poem1{ font-size: 1.5em; }
 
 
