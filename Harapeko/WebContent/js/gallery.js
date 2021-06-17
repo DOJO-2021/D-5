@@ -3,7 +3,7 @@ $(document).ready(function() {
 	    $('#dish' + i).jqFloat({
 	        width: 1300,
 	        height: 500,
-	        speed: 5000
+	        speed: 5000000
 	    });
     }
 });

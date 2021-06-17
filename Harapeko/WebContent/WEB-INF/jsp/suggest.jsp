@@ -18,7 +18,7 @@
 <h2>どんな気分？</h2>
 </div>
 <div class="bigtable">
-<form method="POST" action="/Harapeko/SuggestServlet" name="SUGGEST">
+<form method="POST" action="/Harapeko/SuggestServlet" name="SUGGEST"  onSubmit="return check()">
 <input type="reset" value="リセット" name="reset" class="button2">
 <table>
 <td valign="top" style="border:none;">
@@ -261,6 +261,7 @@
 </table>
 </div>
 <div class="decision"><input type="submit" value="決定" class="button"></div>
+
 </td>
 </tr>
 </div>
