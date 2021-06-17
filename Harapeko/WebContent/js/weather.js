@@ -3,17 +3,19 @@
     let appId = "8cf8297187f7c385c96059cae352789a";
 
     //現在の天気を取得する場所の名前
-    let targetCityName = "kamakura";
+    let targetCityName = "Tokyo";
+
+	const lat=document.getElementById('lat').textContent;
+	const lng=document.getElementById('lng').textContent;
+	console.log('緯度:'+lat,'経度:'+lng);
 
 
 
-
-
-//<input type="hidden" id="temp">
-//      const url = "https://api.openweathermap.org/data/2.5/weather" + "?lat=" + lat + "&lon=" + lng + "&units=metric&APPID=" + appId;
-
-
-    const requestUrl = "https://api.openweathermap.org/data/2.5/weather?APPID=" + appId + "&lang=ja&units=metric&q=" + targetCityName + ",jp;";
+	if(lat==false || lng==false){
+		var requestUrl = "https://api.openweathermap.org/data/2.5/weather?APPID=" + appId + "&lang=ja&units=metric&q=" + targetCityName + ",jp;";
+	}else{
+    	var requestUrl = "https://api.openweathermap.org/data/2.5/weather" + "?lat=" + lat + "&lon=" + lng + "&units=metric&APPID=" + appId;
+	}
 
     //Ajax通信用のオブジェクトを作成
     let xhr =new XMLHttpRequest();
@@ -40,6 +42,7 @@
         let obj = JSON.parse(response);
 
         let temp = obj.main.temp;
+        console.log('現在地の気温:'+temp);
 
 
     document.getElementById('temp').value=temp;
