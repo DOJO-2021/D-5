@@ -19,9 +19,15 @@
 		</a>
 	</div>
 
-		<a href="/Harapeko/GalleryServlet">ギャラリー</a>
 
-		<a href="/Harapeko/ColumnServlet">コラム</a>
+		<section class="mainbtn">
+		  <a href="/Harapeko/GalleryServlet" class="btn_02_a"><span>ギャラリー</span></a>
+		  </section>
+ 		<section class="mainbtn">
+  		 <a href="/Harapeko/ColumnServlet" class="btn_02_a"><span>コラム</span></a>
+		</section>
+
+
 
 
    <!--はらぺこーぬの吹き出しからおすすめ食材 -->
