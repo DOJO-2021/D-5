@@ -18,4 +18,4 @@
 
 </main>
 
-<jsp:include page="/WEB-INF/jsp/footer.jsp"/>html>
+<jsp:include page="/WEB-INF/jsp/footer.jsp"/>
