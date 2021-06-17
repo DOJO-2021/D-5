@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.DFoodDAO;
 import dao.DSuggestDAO;
@@ -30,6 +31,15 @@ public class SuggestServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		String lat = request.getParameter("lat");
+		String lng = request.getParameter("lng");
+
+		// セッションスコープにIDを格納する
+		HttpSession session = request.getSession();
+		session.setAttribute("lat", lat);
+		session.setAttribute("lng", lng);
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/suggest.jsp");
 		dispatcher.forward(request, response);
 	}

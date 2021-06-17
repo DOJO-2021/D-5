@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="styleSheet" href="/Harapeko/css/common.css">
 <jsp:include page="/WEB-INF/jsp/header.jsp"/>
-<script type="text/javascript" src="js/common.js"></script>
-<script type="text/javascript" src="js/weather.js"></script>
+
 </head>
 <body>
 	<header class="header">
@@ -16,6 +15,8 @@
 <div class="wrapper">
 <a href="/Harapeko/MainServlet">メインへ戻る</a>
 <h2>どんな気分？</h2>
+<div id="lat"  hidden>${lat}</div>
+<div id="lng"  hidden>${lng}</div>
 </div>
 <div class="bigtable">
 <form method="POST" action="/Harapeko/SuggestServlet" name="SUGGEST"  onSubmit="return check()">
@@ -269,5 +270,7 @@
 </form>
 </div>
 </main>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/weather1.js"></script>
 
 <jsp:include page="/WEB-INF/jsp/footer.jsp"/>

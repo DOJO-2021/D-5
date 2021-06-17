@@ -2,8 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <jsp:include page="/WEB-INF/jsp/header.jsp"/>
-<script type="text/javascript" src="js/weather.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
+
 <link rel="styleSheet" href="/Harapeko/css/common.css">
 	<link rel="stylesheet" href="/Harapeko/css/NewFile.css">
 	<header class="header">
@@ -15,6 +14,8 @@
 <div class="wrapper">
 <button onclick="javascript:history.back();" class="button2">前の画面に戻る</button>
 <h2>今日のメニューはこれだ！</h2>
+<div id="lat" hidden>${lat}</div>
+<div id="lng" hidden>${lng}</div>
 <!-- <h3>${comment}</h3> -->
 
 <!-- 料理名 -->
@@ -104,5 +105,7 @@
 <a href="/Harapeko/MainServlet">メインへ戻る</a>
 </div>
 </main>
+<script type="text/javascript" src="js/weather1.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
 
 <jsp:include page="/WEB-INF/jsp/footer.jsp"/>
