@@ -1,5 +1,6 @@
-function check(){
 
+
+function check(){
 	if(window.confirm('この条件でよろしいですか？')){ // 確認ダイアログを表示
 
 		return true; // 「OK」時は送信を実行
@@ -12,6 +13,4 @@ function check(){
 
 	}
 }
-
-
 
