@@ -22,9 +22,12 @@
 	</div>
 
 	<div class="dishsuggest">
-		<a href="/Harapeko/SuggestServlet">
-			<img alt="条件入力へ" src="/Harapeko/images/条件入力.jpg" class="img_center">
-		</a>
+		<form method = "get" action="/Harapeko/SuggestServlet" name="geo">
+		<a href="javascript:a();"><img src="/Harapeko/images/条件入力.jpg"  alt="条件入力へ"  class="img_center" onClick="a();"></a>
+		<input type="hidden" name="lat" id="lat">
+		<input type="hidden" name="lng" id="lng">
+<!-- 	<input type="image" src="/Harapeko/images/条件入力.jpg"  alt="条件入力へ">  -->
+		</form>
 	</div>
 
 	<ul class="m_btn">
@@ -55,5 +58,6 @@
 
 </div>
 </main>
-<jsp:include page="/WEB-INF/jsp/footer.jsp"/>
+ <script  type="text/javascript" src="js/pos1.js"></script>
 
+<jsp:include page="/WEB-INF/jsp/footer.jsp"/>
