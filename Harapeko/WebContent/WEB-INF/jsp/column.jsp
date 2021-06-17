@@ -5,18 +5,31 @@
 <body>
 	<header class="header">
 		<div class="logo">
-			<h1><img alt="はらぺこ。" src="/Harapeko/images/logo1_2.jpg"></h1>
+			<h1><a href="/Harapeko/MainServlet"><img alt="はらぺこ。" src="/Harapeko/images/logo1_2.jpg"></a></h1>
 		</div>
 	</header>
 <main>
 	<div class="wrapper">
 	<a href="/Harapeko/MainServlet">メインへ戻る</a>
 		<h2 class="heading">コラム</h2>
-		<p><strong>${column.title}</strong></p>
-		<p><strong>${column.content}</strong></p>
 
-		<p><img alt="はらペコーぬ" src="/Harapeko/images/mainpeko.jpg" ></p>
 	</div>
+
+<!-- コラム案 -->
+<div class="section">
+ <div class="oneArea">
+    <div class="onebox">
+      <div class="imgArea"><img src="/Harapeko/images/harapekonu5.jpg" alt="はらペコーぬ"></div>
+      <div class="fukiArea"><div class="fukidasi">		<p><strong>${column.title}</strong></p>
+		<p>${column.content}</p></div>
+    </div>
+    </div>
+    <div class="onebox">
+      <div class="imgArea"><img src="/Harapeko/images/icon2.png"  alt="ユーザーさん"></div>
+      <div class="fukiArea"><div class="fukidasi">はらペコーぬありがとう！</div></div>
+    </div>
+  </div>
+</div>
 
 
 </main>
