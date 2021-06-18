@@ -10,6 +10,9 @@ import java.util.List;
 
 import model.Food;
 
+//メインメニューのおすすめ食材に出す（調味料などを省く）ためのＤＡＯ。MainServletに食材を渡す。
+
+
 public class FSuggestDAO {
 
 	public List<Food> select() {
@@ -24,6 +27,8 @@ public class FSuggestDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-5/data", "sa", "sa");
 
 			// SQL文を準備する
+			//judgeはメインメニューのおすすめ食材に出るか出ないかの区別
+			//judge=trueのものを取り出す
 			String sql = "select food_id, food_name from m_food where judge= 'true'";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 

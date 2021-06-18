@@ -3,16 +3,20 @@ package model;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+//料理のBEANSです。
+
+//17行目には使用する食材のリストが入る！！！
 public class Dish implements Serializable{
 	private String id;
 	private String name;
-	private String path;
+	private String path;	//画像のパス
 	private String genre;
 	private int cal;
 	private String diff;
-	private String url;
+	private String url;	//クラシルのリンク
 	private ArrayList<Food> foodList;
 
+	//コンストラクタ
 	public Dish(String id, String name, String path, String genre, int cal, String diff, String url) {
 		this.id = id;
 		this.name = name;
@@ -24,18 +28,20 @@ public class Dish implements Serializable{
 		this.foodList = new ArrayList<>();
 	}
 
+	//空のコンストラクタ
 	public Dish() {
 		this.id = "";
 		this.name = "";
 		this.path = "";
 		this.genre = "";
-		this.cal = 10000;
+		this.cal = 10000;		//入力がない場合のカロリーの設定値？
 		this.diff = "";
 		this.url = "";
 		this.foodList = new ArrayList<>();
 
 	}
 
+	//GetterSetter
 	public String getId() {
 		return id;
 	}

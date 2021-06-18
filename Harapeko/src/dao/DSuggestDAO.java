@@ -10,12 +10,15 @@ import java.util.List;
 
 import model.Dish;
 
-
+//料理(dish)の提案機能のDAOです
+//プロパティには料理の概要のdish型、食材検索用？、お天気スイッチ用
 public class DSuggestDAO {
 	public List<Dish> select(Dish dish,String food,String hot_cold) {
 		Connection conn = null;
 
+		//dishlistに提案条件にあう料理を全て詰め込む
 		List<Dish> dishList = new ArrayList<Dish>();
+		//aaaにはお天気スイッチ(hot=cold)がONの場合、SQL文が４行目に追加される。
 		String aaa;
 		if(hot_cold.equals("no")) {
 			aaa="";
@@ -23,21 +26,25 @@ public class DSuggestDAO {
 			aaa=" AND md." + hot_cold + "='true'";
 		}
 
+		//データベースに接続
 		try {
+			// JDBCのH2ドライバを読み込む
 			Class.forName("org.h2.Driver");
 
+			// データベースに接続する
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-5/data", "sa", "sa");
 
-			//SQL文
+			//SQL文を準備する。
+			//２行目ではjoinではなくwhere文を用いた結合をしている。
+			//３行目はSuggest.jspの条件選択に該当する
 			String sql = "select distinct md.dish_id, md.dish_name, md.img_path, md.dish_genre, md.difficulty, md.cal, md.url FROM dish_details as dd, m_dish as md, m_food as mf"
 					+ " where dd.dish_id = md.dish_id AND dd.food_id = mf.food_id"
 					+ " and md.CAL <= ? and md.DISH_GENRE like ? and md.DIFFICULTY like ? and mf.food_id like ? and md.dish_id like ?"
 					+ aaa +";";
+			// SQL文を実行し、結果表を取得する
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			// SQL完成させる "%"+ + "%"
-
-
+				// SQL完成させる
 				pStmt.setInt(1, dish.getCal());
 
 				pStmt.setString(2, "%"+  dish.getGenre() + "%");
@@ -50,16 +57,14 @@ public class DSuggestDAO {
 				else {
 					pStmt.setString(4, "%"+ food + "%") ;
 				}
-
 				pStmt.setString(5, "%" + dish.getId() + "%");
 
 
-
-			// SQL�������s���A���ʕ\���擾����
+			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
-			// ���ʕ\���R���N�V�����ɃR�s�[����
-			while (rs.next()) {				//Next�͎��̃f�[�^������A���̃f�[�^���������
+			// 結果表をコレクションにコピーする
+			while (rs.next()) {					//Nextでデータを回す
 				Dish card = new Dish(
 				rs.getString("dish_ID"),
 				rs.getString("dish_name"),
@@ -69,19 +74,20 @@ public class DSuggestDAO {
 				rs.getString("difficulty"),
 				rs.getString("url")
 				);
-				dishList.add(card);		//63�s�ڂ�SearchServe�ɑ�����
+				dishList.add(card);		 	   //SuggestServetにいくよん
 			}
 		}
+		//エラーが起きたらdishListの中身をnullにしてconsoleに例外を出す
 		catch (SQLException e) {
-			e.printStackTrace();			//cardList=null�̏ꍇconsole�ɗ�O���o���B
+			e.printStackTrace();
 			dishList = null;
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			dishList = null;
 		}
+		// データベースを切断
 		finally {
-			// �f�[�^�x�[�X��ؒf
 			if (conn != null) {
 				try {
 					conn.close();
@@ -93,7 +99,7 @@ public class DSuggestDAO {
 			}
 		}
 
-		// ���ʂ�Ԃ� search_Servlet.java�Ō������ʂ����N�G�X�g�X�R�[�v�Ɋi�[����
+		// 結果をsuggestServletに返す。 そのあとに検索結果をリクエストスコープに格納していくよ
 		return dishList;
 	}
 
