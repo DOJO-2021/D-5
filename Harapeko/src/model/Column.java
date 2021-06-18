@@ -6,7 +6,6 @@ public class Column {
 	private String content;
 
 
-
 	public Column(String id, String title, String content) {
 		super();
 		this.id = id;

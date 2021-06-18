@@ -10,6 +10,7 @@ import java.util.List;
 
 import model.Column;
 
+//コラムページのデータを取得しコラムサーブレットに送信するDAO
 
 public class ColumnDAO {
 
