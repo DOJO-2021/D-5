@@ -129,9 +129,14 @@ public class SuggestServlet extends HttpServlet {
         }
         else {
         //通常の処理です。
-            peComment = "普通に検索するなら食べ■グとかで良くないペコか...？";
+            peComment = "普通に検索するならc〇〇kpadとかで良くないペコか...？";
 
-			dishList = DsDao.select(new Dish("", "", "", genre,cal, diff, ""),food,hot_cold);
+            if(id.equals("")) {
+				dishList = DsDao.select(new Dish("", "", "", genre,cal, diff, ""),food,hot_cold);
+            }
+            else {
+				dishList = DsDao.select(new Dish(id, "", "", "",100000, "", ""),"","no");
+            }
         }
 
         //見つからなかった時。

@@ -12,7 +12,7 @@
 	let lng=document.getElementById('lng').textContent;
 	console.log('緯度:'+lat,'経度:'+lng);
 
-	if(lat == 'false'){
+	if(lat == 'false' || lat == ""){
 		var requestUrl = "https://api.openweathermap.org/data/2.5/weather?APPID=" + appId + "&lang=ja&units=metric&q=" + targetCityName + ",jp;";
 	}else{
     	var requestUrl = "https://api.openweathermap.org/data/2.5/weather" + "?lat=" + lat + "&lon=" + lng + "&units=metric&APPID=" + appId;

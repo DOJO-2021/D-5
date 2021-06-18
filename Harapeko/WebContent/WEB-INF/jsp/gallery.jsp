@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <!--  	<link rel="stylesheet" href="/Harapeko/css/NewFile.css">-->
  <link rel="stylesheet" href="/Harapeko/css/gallery.css">
- <script type="text/javascript" src="js/scripts/jquery-3.4.1.min.js"></script>
+ <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
  <script type="text/javascript" src="js/jqfloat.min.js"></script>
  <script type="text/javascript" src="js/gallery.js"></script>
 </head>
@@ -26,6 +26,7 @@
 					<form method="post" action="/Harapeko/GalleryServlet">
 						<input type="hidden" name="id" value="${e.id}">
 						<input type="image" src="/Harapeko${e.path}" style="width:45%" id="dish${i}" class="menu">
+						<input type="hidden" name="temp" value="15">
 					</form>
 				</div>
 				<c:set var="i" value="${i + 1}" />
