@@ -172,27 +172,22 @@
             <td style="border:none;"class="t_width"><input type="radio" name="food" value="f37" >生クリーム</td>
            </tr>
            <tr style="border:none;">
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f80" >のり</td>
             <td style="border:none;"class="t_width"><input type="radio" name="food" value="f40" >チーズ</td>
-            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f59" >タケノコの水煮</td>
             <td style="border:none;"class="t_width"><input type="radio" name="food" value="f63" >豆腐</td>
            </tr>
            <tr>
-            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f64" >アサリの水煮</td>
             <td style="border:none;"class="t_width"><input type="radio" name="food" value="f65" >キムチ</td>
-            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f71" >ピーナッツ</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f131" >しらたき</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f153" >きくらげ</td>
            </tr>
            <tr>
-            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f80" >のり</td>
             <td style="border:none;"class="t_width"><input type="radio" name="food" value="f87" >しめじ</td>
             <td style="border:none;"class="t_width"><input type="radio" name="food" value="f98" >しいたけ</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f144" >マッシュルーム</td>
            </tr>
            <tr>
-            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f99" >うずらの卵の水煮</td>
-            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f110" >大豆の水煮</td>
-            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f117" >干しエビ</td>
-           </tr>
-           <tr>
-            <td style="border:none;"><input type="radio" name="food" value="f118" >カシューナッツ</td>
+            <td style="border:none;"class="t_width"><input type="radio" name="food" value="f130" >えのき</td>
            </tr>
           </table>
           </div>
@@ -244,6 +239,8 @@
       		<td>
       		<label>
       	   		<input type="radio" name="t_switch" value="yes" checked>ON
+      	   	</label>
+      	   	<label>
         	 	<input type="radio" name="t_switch" value="no">OFF
 			<!-- JSを使用し気温を挿入するためのhiddenです -->
         	 	<input type="hidden" name="temp" id="temp">
@@ -255,8 +252,11 @@
         <td>
          <label>
          <input type="radio" name="feeling" value="yes" checked>ON
+         </label>
+         <label>
          <input type="radio" name="feeling" value="no">OFF
-          </label>
+         </label>
+
         </td>
       </tr>
 </table>
