@@ -17,7 +17,7 @@
 <h2>どんな気分？</h2>
 <div id="lat"  hidden>${lat}</div>
 <div id="lng"  hidden>${lng}</div>
-</div>
+
 <div class="bigtable">
 <form method="POST" action="/Harapeko/SuggestServlet" name="SUGGEST"  onSubmit="return check()">
 <input type="reset" value="リセット" name="reset" class="button2">
@@ -33,7 +33,7 @@
       <tr>
         <td style="border:none;" >
           <div onclick="obj=document.getElementById('meat').style; obj.display=(obj.display=='none')?'block':'none';" class="category">
-              <a style="cursor:pointer;">肉🍖</a>
+            <a style="cursor:pointer;">肉🍖</a>
           </div>
 <!-- 折り畳み展開ポインタ -->
 
@@ -72,10 +72,11 @@
           </div>
         </td>
         </tr>
-        <tr>
+
+      <tr>
         <td style="border:none;" >
           <div onclick="obj=document.getElementById('fish').style; obj.display=(obj.display=='none')?'block':'none';" class="category">
-              <a style="cursor:pointer;" >魚介類🐡</a>
+            <a style="cursor:pointer;" >魚介類🐡</a>
           </div>
 <!-- 折り畳み展開ポインタ -->
 
@@ -99,17 +100,16 @@
              <td style="border:none;" class="t_width"><input type="radio" name="food" value="f90" >シャケ</td>
              <td style="border:none;" class="t_width"><input type="radio" name="food" value="f25">ブリ</td>
              <td style="border:none;" class="t_width"><input type="radio" name="food" value="f123" >マグロ</td>
-
-
             </tr>
            </table>
           </div>
         </td>
         </tr>
-        <tr>
+
+      <tr>
         <td style="border:none;">
-        <div onclick="obj=document.getElementById('vegetable').style; obj.display=(obj.display=='none')?'block':'none';" class="category">
-              <a style="cursor:pointer;">野菜🥬</a>
+          <div onclick="obj=document.getElementById('vegetable').style; obj.display=(obj.display=='none')?'block':'none';" class="category">
+            <a style="cursor:pointer;">野菜🥬</a>
           </div>
 <!--  折り畳み展開ポインタ -->
 
@@ -169,10 +169,12 @@
           </table>
         </div>
         </td>
-        <tr>
+        </tr>
+
+      <tr>
         <td style="border:none;">
           <div onclick="obj=document.getElementById('other').style; obj.display=(obj.display=='none')?'block':'none';" class="category">
-              <a style="cursor:pointer;">穀類🍚・乳製品🥛・その他</a>
+            <a style="cursor:pointer;">穀類🍚・乳製品🥛・その他</a>
           </div>
 <!-- 折り畳み展開ポインタ -->
 
@@ -235,7 +237,7 @@
       <tr>
         <th class="title2">カロリー</th>
         <td style="border:none;">
-          <div>～<input type="text" name="cal">cal</div>
+          <div>～<input type="text" name="cal" pattern="[1-9][0-9]*">cal</div>
         </td>
       </tr>
       <tr style="border:none;">
@@ -281,12 +283,14 @@
 <div class="decision"><input type="submit" value="決定" class="button"></div>
 
 </td>
-</tr>
 </div>
+</td>
 </table>
 </form>
 </div>
+</div>
 </main>
+
 <script type="text/javascript" src="js/common.js"></script>
 <script type="text/javascript" src="js/weather1.js"></script>
 
