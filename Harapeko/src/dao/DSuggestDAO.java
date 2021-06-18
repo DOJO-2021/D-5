@@ -41,7 +41,8 @@ public class DSuggestDAO {
 					+ " where dd.dish_id = md.dish_id AND dd.food_id = mf.food_id"
 					+ " and md.CAL <= ? and md.DISH_GENRE like ? and md.DIFFICULTY like ? and mf.food_id like ? and md.dish_id like ?"
 					+ aaa +";";
-			// SQL文を実行し、結果表を取得する
+
+			//プリペアードステートメントの準備
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL完成させる

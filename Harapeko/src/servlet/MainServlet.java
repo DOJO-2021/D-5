@@ -17,10 +17,12 @@ import model.Food;
 public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	//メインメニュー読み込み時におすすめ食材を表示するペコ
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		//おすすめ食材を選ぶ
+
+		//FoodSuggestDAOで選んだ食材から無作為に一つの食材を抽出し、リクエストスコープにセット。
 		FSuggestDAO FDao = new FSuggestDAO();
 		List<Food> foodList = FDao.select();
 		Food recommend = foodList.get((int)(Math.random() * foodList.size()));

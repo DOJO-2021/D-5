@@ -24,6 +24,8 @@ public class ColumnServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+
+	//メインからコラムJSPに遷移する際の処理
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// コラムをランダムで1つ表示します
 		//DAOの読み込み
@@ -43,6 +45,7 @@ public class ColumnServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	//コラムJSPからの遷移する際の処理はない。
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

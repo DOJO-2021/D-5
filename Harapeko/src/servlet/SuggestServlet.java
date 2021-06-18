@@ -30,12 +30,15 @@ public class SuggestServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+
+	//メインページからSuggest.jspにフォワードする際の処理。
+	//条件入力をするボタンを押した際に取得される緯度・経度を「セッションスコープ」に格納する。
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String lat = request.getParameter("lat");
 		String lng = request.getParameter("lng");
 
-		// セッションスコープにIDを格納する
+		// セッションスコープに緯度・経度を格納する
 		HttpSession session = request.getSession();
 		session.setAttribute("lat", lat);
 		session.setAttribute("lng", lng);
@@ -47,6 +50,9 @@ public class SuggestServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+
+	//Result.jspに遷移する際の処理。
+	//ちなみにsuggest.jsp「決定」だけでなくresult.jsp「再提案」押下でも実行される。
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		// リクエストパラメータを取得する
@@ -55,21 +61,23 @@ public class SuggestServlet extends HttpServlet {
 		int cal = 0;
 		String diff = request.getParameter("difficulty");
 		String genre = request.getParameter("genre");
-		String feeling = request.getParameter("feeling");
-		String id = request.getParameter("id");
-		if(request.getParameter("cal") == "") {
+		String feeling = request.getParameter("feeling");		//気まぐれスイッチ
+		String id = request.getParameter("id");					//resultで表示したidを取得（再提案で使用、suggesstではnull）
+		if(request.getParameter("cal") == "") {					//入力がない場合はカロリー制限なしってこと
 			cal = 100000;
 		}
-		else {
+		else {													//入力された半角数字のStringをintに変換
 			cal = Integer.parseInt(request.getParameter("cal"));
 		}
-		String temp = request.getParameter("temp");
-		String tSwitch =request.getParameter("t_switch");
-		String peComment = "";
+		String temp = request.getParameter("temp");				//気温
+		String tSwitch =request.getParameter("t_switch");		//天気スイッチ
+		String peComment = "";									//気まぐれなペコメント
+
+		//取り敢えず作る
 		DSuggestDAO DsDao = new DSuggestDAO();
 		List<Dish> dishList;
 
-		//現在気温
+		//現在気温から「寒い」「普通」「暑い」を判断しそれを、hot_coldとして出力
 		double temp2= Double.parseDouble(temp);
 		String hot_cold = "no";
 
@@ -83,16 +91,13 @@ public class SuggestServlet extends HttpServlet {
 			}
 		}
 
-
-
        //現在時間を取得
         Date now = new Date();
         Calendar c = Calendar.getInstance();
-
         c.setTime(now);
         int hour = c.get(Calendar.HOUR_OF_DAY);
 
-
+        //気まぐれスイッチONの場合⇒現在時間で場合分けしてSelectを実行する
         if(feeling.equals("yes")) {
             if(hour>=0 && hour<=4) {
                 //"0時台～4時台：無視。
@@ -105,7 +110,7 @@ public class SuggestServlet extends HttpServlet {
                 dishList = DsDao.select(new Dish("","","", "和",cal,diff,""),food,hot_cold);
             }
             else if (hour >= 10 && hour <= 12) {
-                //10時台～13時台：難易度★★★のみ
+                //10時台～12時台：難易度★★★のみ
             	peComment="チャレンジ精神って大事って思わないペコか？";
                 dishList = DsDao.select(new Dish("","","", genre,cal,"★★★",""),food,hot_cold);
             }
@@ -119,31 +124,37 @@ public class SuggestServlet extends HttpServlet {
             	peComment="力こそパワーペコ。You know??";
                 List<Dish> dishList1 = DsDao.select(new Dish("","","", genre,cal,diff,""),"粉唐辛子",hot_cold);
                 List<Dish> dishList2 = DsDao.select(new Dish("","","", genre,cal,diff,""),"ニンニク",hot_cold);
+                //dishlist1と2を足してdishlistにまとめる。
                 dishList = Stream.concat(dishList1.stream(),dishList2.stream())
                 .distinct().collect(Collectors.toList());
             }
             else{
+            	//13字23時はチゲ祭り。わっしょい。
                 peComment = "毎日チゲ食べると美人になるらしいペコ。知らんけど。";
                 dishList = DsDao.select(new Dish("d18","","", "",100000,"",""),"",hot_cold);
             }
         }
         else {
-        //通常の処理です。
-            peComment = "普通に検索するならc〇〇kpadとかで良くないペコか...？";
+        //気まぐれOFFの通常の処理です。
+            peComment = "普通に検索するならC〇〇kpadとかで良くないペコか...？";
 
-            if(id == null) {
+            //suggest.jsp用？
+            if(id.equals("")) {
+          	  if(id == null) {
 				dishList = DsDao.select(new Dish("", "", "", genre,cal, diff, ""),food,hot_cold);
-            }
-            else {
+           	 }
+           	 //result.jspの再提案用？
+           	 else {
 				dishList = DsDao.select(new Dish(id, "", "", "",100000, "", ""),"","no");
-            }
+           	 }
         }
 
-        //見つからなかった時。
+        //見つからなかった時。エラーページにフォワード。
 		if(dishList.size() == 0) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/resultError.jsp");
 			dispatcher.forward(request, response);
 		}
+		//dishListの中身が２つ以上の場合、再提案した際に同じ料理を表示しないようにする。
 		else {
 			if (dishList.size() > 1){
 				for(int i=0 ; i < dishList.size() ; i++) {
@@ -154,10 +165,13 @@ public class SuggestServlet extends HttpServlet {
 				}
 			}
 
+			//ランダムにひとつを抽出
 			Dish dish = dishList.get((int)(Math.random() * dishList.size()));
 
+			//「id」をresult.jspのidから、上で抽出したidに切り替える
 			id = dish.getId();
 
+			//食材のリストを取得し、
 			DFoodDAO DfDao = new DFoodDAO();
 			List<Food> foodList = DfDao.select2(dish);
 
@@ -165,6 +179,7 @@ public class SuggestServlet extends HttpServlet {
 				dish.setFoodList(foods);
 			}
 
+			//リクエストスコープにセットしてリザルトに送るぜベイベー
 			request.setAttribute("dish", dish);
 			request.setAttribute("id", id);
 			request.setAttribute("food", food);
