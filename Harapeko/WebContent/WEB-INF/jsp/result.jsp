@@ -36,10 +36,12 @@
           </label>
         </td> -->
 
+
         <tr>
          <img src="/Harapeko/${dish.path}">
 
         </tr>
+
 
 
 </table>
