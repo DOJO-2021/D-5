@@ -11,6 +11,8 @@ import java.util.List;
 import model.Dish;
 import model.Food;
 
+//指定された料理に対して料理に含まれる食材を返すDAOです
+
 public class DFoodDAO {
 	public List<Food> select2(Dish dish) {
 		Connection conn = null;
@@ -22,20 +24,15 @@ public class DFoodDAO {
 
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/D-5/data", "sa", "sa");
 
-			//SQL文 料理IDで検索してSelectはFood_name
+			//SQL文 料理IDで検索してFood_nameとid(42行目でfoodのbeansに入れるから)を取得
+			//foodとdishのidを対応付けたddテーブルを使い食材を取得
 			String sql = "SELECT mf.food_name,mf.food_id"
 					+ " FROM dish_details AS dd, m_dish AS md, m_food AS mf"
 					+ " WHERE md.dish_id = ? AND dd.dish_id = md.dish_id AND dd.food_id = mf.food_id;";
+
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			// SQL完成させる
-
 				pStmt.setString(1, dish.getId());
-
-				//pStmt.setString(2, "%"+  dish.getGenre() + "%");
-
-				//pStmt.setString(3,  "%"+ dish.getDiff() + "%");
-
 
 			ResultSet rs = pStmt.executeQuery();
 
@@ -57,7 +54,6 @@ public class DFoodDAO {
 			foodList2 = null;
 		}
 		finally {
-			// �f�[�^�x�[�X��ؒf
 			if (conn != null) {
 				try {
 					conn.close();

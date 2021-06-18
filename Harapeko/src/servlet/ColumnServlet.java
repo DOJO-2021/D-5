@@ -25,10 +25,14 @@ public class ColumnServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// コラムをランダムで1つ表示
+		// コラムをランダムで1つ表示します
+		//DAOの読み込み
 		ColumnDAO CDao = new ColumnDAO();
+		//全てのコラムを取得
 		List<Column> columnList = CDao.select();
+		//無作為に抽出
 		Column column = columnList.get((int)(Math.random() * columnList.size()));
+		//リクエストスコープにコラムインスタンスを乗せる。
 		request.setAttribute("column", column );
 
 		// コラムページにフォワードする
