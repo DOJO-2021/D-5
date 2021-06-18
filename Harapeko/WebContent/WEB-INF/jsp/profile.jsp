@@ -10,7 +10,7 @@
 
 <main>
 <div class="wrapper">
-   <p><a href="/Harapeko/MainServlet">メインへ戻る</a></p>
+   <p><a href="/Harapeko/MainServlet" class="main_btn">メインへ戻る</a></p>
 	<h2>はらペコーぬは何者？</h2>
 </div>
     <div class="hara"><img src="/Harapeko/images/profile2.jpg" alt="キャラクター紹介"></div>

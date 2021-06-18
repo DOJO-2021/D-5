@@ -11,13 +11,13 @@
 <body>
 	<header class="header">
 		<div class="logo">
-			<h1><img alt="はらぺこ。" src="/Harapeko/images/logo1_2.jpg"></h1>
+			<h1><a href="/Harapeko/MainServlet"><img alt="はらぺこ。" src="/Harapeko/images/logo1_2.jpg"></a></h1>
 		</div>
 	</header>
 <main>
 	<div class="wrapper">
-	<button onclick="javascript:history.back();" class="button2">前の画面に戻る</button>
-		<h2 class="heading">ギャラリー</h2>
+	<a href="/Harapeko/MainServlet" class="main_btn">メインへ戻る</a>
+		<h2 class="heading">写真を選んでクリックしてみてね</h2>
 	<button onclick="window.location.reload(true);" class="button2">画像がうまく表示されない場合</button>
 		<div id="gallery" class="gallery">
 			<c:set var="i" value="1" />
