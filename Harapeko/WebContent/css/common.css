@@ -559,3 +559,9 @@ a.btn_02_a:hover span:after {
   -webkit-transform: rotate(10deg);
   transform: rotate(10deg);
 }
+
+
+.footer {
+	margin: 60px 0 0 0;
+	line-height: 0;
+}
