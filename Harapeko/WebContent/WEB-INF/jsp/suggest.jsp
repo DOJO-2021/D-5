@@ -29,7 +29,7 @@
 
 
       <tr style="border:none;">
-       <td style="border:none;"	 class="title"><strong>食材</strong></td>
+       <td style="border:none;"	 class="title"><strong>食材（１つ選んでね）</strong></td>
 
       <tr>
         <td style="border:none;" >
@@ -240,7 +240,7 @@
         </td>
       </tr>
       <tr>
-      	<th class="title2">お天気スイッチ</th>
+      	<th class="title2">お天気スイッチ <p class="tenki">&emsp;※気温に合った料理が出てくるよ</p></th>
       		<td>
       		<label>
       	   		<input type="radio" name="t_switch" value="yes" checked>ON
