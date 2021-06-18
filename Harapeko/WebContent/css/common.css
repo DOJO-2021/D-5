@@ -192,7 +192,7 @@ td.t_width{
 /* リセット・再提案ボタンの位置調整 */
 input[type="reset"] { margin-left : 800px ; }/*リセットボタンの位置調整*/
 input[type="reset"] { margin-bottom : 30px ; }/*リセットボタンの位置調整*/
-input[type="submit"] { margin-left : 790px ; }/*再提案ボタンの位置調整*/
+input[type="submit"] { margin-left : 730px ; }/*再提案ボタンの位置調整*/
 input[type="submit"] { margin-top : 30px ; }/*再提案ボタンの位置調整*/
 input.button { margin-left : 243px ; }
 input.button { margin-bottom : 30px ; }
