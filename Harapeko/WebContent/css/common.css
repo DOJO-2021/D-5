@@ -57,7 +57,7 @@ h3 {
 
 
 
-/* メニューに戻るの色 */
+/* メニューに戻るの色
 a:link {
   color: #BF00FF;
   text-decoration: none;
@@ -75,7 +75,7 @@ a:active {
   text-decoration: none;
 }
 
-
+ */
 
 
 /* プロフィール画像真ん中 */
@@ -296,6 +296,7 @@ div.gazo_no_moji {
 }
 
 
+
 /* ギャラリーに飛ぶボタン*/
 section {
   max-width: 300px;
@@ -409,7 +410,9 @@ a.btn_02_a:hover span:after {
  padding:0
 }
 
-/*コラム案*/
+
+
+/*コラム*/
 .oneArea {
   display: flex;
   flex-wrap: wrap;
@@ -517,3 +520,42 @@ a.btn_02_a:hover span:after {
 .poem1{ font-size: 1.5em; }
 
 
+/*mainへ戻るボタン*/
+.main_btn {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 5px 11px 5px 15px;
+  text-decoration: none;
+  color: #4682b4;
+  transition: .4s;
+}
+
+.main_btn:before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  width: 4px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 3px;
+  background:#4682b4;
+}
+
+.main_btn:after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  width: 4px;
+  height: 100%;
+  top:0;
+  left: 100%;
+  border-radius: 3px;
+  background:#4682b4;
+}
+
+.main_btn:hover:before, .main_btn:hover:after {
+  -webkit-transform: rotate(10deg);
+  transform: rotate(10deg);
+}

@@ -10,7 +10,7 @@
 	</header>
 <main>
 	<div class="wrapper">
-	<a href="/Harapeko/MainServlet">メインへ戻る</a>
+	<a href="/Harapeko/MainServlet" class="main_btn">メインへ戻る</a>
 		<h2 class="heading">コラム</h2>
 
 	</div>

@@ -100,9 +100,9 @@
 	<input type="hidden" name="t_switch" value="${t_switch}">
 	<input type="hidden" name="temp" id="temp">
 
-	<input type="submit" value="再提案"  class="button3">
+	<input type="submit" value="同じ条件で探す"  class="button3">
 </form>
-<a href="/Harapeko/MainServlet">メインへ戻る</a>
+<a href="/Harapeko/MainServlet" class="main_btn">メインへ戻る</a>
 </div>
 </main>
 <script type="text/javascript" src="js/weather1.js"></script>
