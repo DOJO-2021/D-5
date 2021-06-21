@@ -31,7 +31,7 @@ public class GalleryServlet extends HttpServlet {
 		List<Dish> dishList = DDao.select(new Dish(), "", "no");
 		request.setAttribute("List", dishList );
 
-		// ギャラリーページにフォワードする
+		//ギャラリーページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/gallery.jsp");
 		dispatcher.forward(request, response);
 	}
@@ -39,6 +39,8 @@ public class GalleryServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+
+	//ギャラリーでクリックした料理のリザルトを表示
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String id = request.getParameter("id");

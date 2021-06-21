@@ -19,6 +19,8 @@
 	<a href="/Harapeko/MainServlet" class="main_btn">メインへ戻る</a>
 		<h2 class="heading">写真を選んでクリックしてみてね</h2>
 	<button onclick="window.location.reload(true);" class="button2">画像がうまく表示されない場合</button>
+
+	<!-- GallerySerlvletから食べ物リストを取得し、idと画像を表示 -->
 		<div id="gallery" class="gallery">
 			<c:set var="i" value="1" />
 			<c:forEach var="e" items="${List}">
