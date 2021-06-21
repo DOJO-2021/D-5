@@ -78,6 +78,7 @@ public class DSuggestDAO {
 				dishList.add(card);		 	   //SuggestServetにいくよん
 			}
 		}
+
 		//エラーが起きたらdishListの中身をnullにしてconsoleに例外を出す
 		catch (SQLException e) {
 			e.printStackTrace();

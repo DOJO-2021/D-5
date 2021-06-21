@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<!-- 位置情報の取得はpos1.java、おすすめ食材はFSuggest.dao,main.servletを参照 -->
+
 <jsp:include page="/WEB-INF/jsp/header.jsp"/>
  <!--  	<link rel="stylesheet" href="/Harapeko/css/NewFile.css">-->
 </head>
@@ -12,7 +14,7 @@
 <main>
 <div class="wrapper">
 
-
+	<!--ペコポエム  -->
 	<div class="poem">
 	<p class="poem1"><strong>あなたの自炊は、ボタンをひとつ押すところから。</strong></p>
     <p>「またカレーかぁ」</p>
@@ -21,15 +23,18 @@
 	<p>「はらペコ。」は、そんなあなたの手助けをします。</p>
 	</div>
 
+	<!-- 条件入力画面:
+	 ボタンを押すとpos1.jsを実行。位置情報を取得し緯度経度をhiddenのフォームに挿入しsubmitする -->
 	<div class="dishsuggest">
 		<form method = "get" action="/Harapeko/SuggestServlet" name="geo">
-		<a href="javascript:a();"><img src="/Harapeko/images/条件入力.jpg"  alt="条件入力へ"  class="img_center" onClick="a();"></a>
+		<a href="javascript:a();"><img src="/Harapeko/images/条件入力.jpg"  alt="条件入力へ"  class="img_center" ></a>
 		<input type="hidden" name="lat" id="lat">
 		<input type="hidden" name="lng" id="lng">
 <!-- 	<input type="image" src="/Harapeko/images/条件入力.jpg"  alt="条件入力へ">  -->
 		</form>
 	</div>
 
+	<!-- ギャラリーとコラムの項目 -->
 	<ul class="m_btn">
 	  <li>
 		<section class="mainbtn">
@@ -44,7 +49,7 @@
 	</ul>
 
 
-   <!--はらぺこーぬの吹き出しからおすすめ食材 -->
+   <!--はらぺこーぬの吹き出しからおすすめ食材を表示（fSuggestDao） -->
 <div class="gazo_ni_moji">
 			<a href="/Harapeko/ProfileServlet"><img alt="はらペコーぬ" src="/Harapeko/images/mainpeko.jpg" ></a>
  		<div class="gazo_no_moji">

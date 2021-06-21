@@ -15,6 +15,7 @@
 	<div class="wrapper">
 		<a href="/Harapeko/MainServlet">メインへ戻る</a>
 		<h2>どんな気分？</h2>
+		<!-- セッションスコープから緯度経度の挿入 -->
 		<div id="lat"  hidden>${lat}</div>
 		<div id="lng"  hidden>${lng}</div>
 
@@ -261,8 +262,10 @@
 											</label>
 											<label>
 											 	<input type="radio" name="t_switch" value="no">OFF
+
 												<!-- JSを使用し気温を挿入するためのhiddenです -->
 												<input type="hidden" name="temp" id="temp">
+
 											</label>
 										</td>
 									</tr>

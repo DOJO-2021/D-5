@@ -1,4 +1,4 @@
-
+//Suggest.jspで条件決定時の処理
 
 function check(){
 	if(window.confirm('この条件でよろしいですか？')){ // 確認ダイアログを表示

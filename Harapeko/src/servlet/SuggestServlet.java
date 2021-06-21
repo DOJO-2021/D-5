@@ -50,9 +50,7 @@ public class SuggestServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-
 	//Result.jspに遷移する際の処理。
-	//ちなみにsuggest.jsp「決定」だけでなくresult.jsp「再提案」押下でも実行される。
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		// リクエストパラメータを取得する
@@ -61,17 +59,17 @@ public class SuggestServlet extends HttpServlet {
 		int cal = 0;
 		String diff = request.getParameter("difficulty");
 		String genre = request.getParameter("genre");
-		String feeling = request.getParameter("feeling");		//気まぐれスイッチ
-		String id = request.getParameter("id");					//resultで表示したidを取得（再提案で使用、suggesstではnull）
-		if(request.getParameter("cal") == "") {					//入力がない場合はカロリー制限なしってこと
+		String feeling = request.getParameter("feeling");			//気まぐれスイッチ
+		String id = request.getParameter("id");						//resultで表示したidを取得（再提案で使用、suggesstではnull）
+		if(request.getParameter("cal") == "") {						//入力がない場合はカロリー制限なしってこと
 			cal = 100000;
 		}
-		else {													//入力された半角数字のStringをintに変換
-			cal = Integer.parseInt(request.getParameter("cal"));
+		else {
+			cal = Integer.parseInt(request.getParameter("cal"));	//入力された半角数字のStringをintに変換
 		}
-		String temp = request.getParameter("temp");				//気温
-		String tSwitch =request.getParameter("t_switch");		//天気スイッチ
-		String peComment = "";									//気まぐれなペコメント
+		String temp = request.getParameter("temp");					//気温
+		String tSwitch =request.getParameter("t_switch");			//天気スイッチ
+		String peComment = "";										//気まぐれなペコメント
 
 		//取り敢えず作る
 		DSuggestDAO DsDao = new DSuggestDAO();
@@ -80,6 +78,7 @@ public class SuggestServlet extends HttpServlet {
 		//現在気温から「寒い」「普通」「暑い」を判断しそれを、hot_coldとして出力
 		double temp2= Double.parseDouble(temp);
 		String hot_cold = "no";
+
 
 		if(tSwitch.equals("yes")) {
 			if (temp2<10) {
@@ -91,7 +90,8 @@ public class SuggestServlet extends HttpServlet {
 			}
 		}
 
-       //現在時間を取得
+
+		//現在時間を取得
         Date now = new Date();
         Calendar c = Calendar.getInstance();
         c.setTime(now);
@@ -110,7 +110,7 @@ public class SuggestServlet extends HttpServlet {
                 dishList = DsDao.select(new Dish("","","", "和",cal,diff,""),food,hot_cold);
             }
             else if (hour >= 10 && hour <= 12) {
-                //10時台～12時台：難易度★★★のみ
+                //10時台～13時台：難易度★★★のみ
             	peComment="チャレンジ精神って大事って思わないペコか？";
                 dishList = DsDao.select(new Dish("","","", genre,cal,"★★★",""),food,hot_cold);
             }
@@ -129,24 +129,24 @@ public class SuggestServlet extends HttpServlet {
                 .distinct().collect(Collectors.toList());
             }
             else{
-            	//13字23時はチゲ祭り。わっしょい。
                 peComment = "毎日チゲ食べると美人になるらしいペコ。知らんけど。";
                 dishList = DsDao.select(new Dish("d18","","", "",100000,"",""),"",hot_cold);
             }
         }
         else {
-        //気まぐれOFFの通常の処理です。
+        	 //気まぐれOFFの通常の処理です
             peComment = "普通に検索するならC〇〇kpadとかで良くないペコか...？";
 
+
             //suggest.jsp用？
-            if(id.equals("")) {
-          	  if(id == null) {
+            //   if(id.equals("")) {
+            if(id == null) {
 				dishList = DsDao.select(new Dish("", "", "", genre,cal, diff, ""),food,hot_cold);
-           	 }
-           	 //result.jspの再提案用？
-           	 else {
+            }
+          //result.jspの再提案用？
+            else {
 				dishList = DsDao.select(new Dish(id, "", "", "",100000, "", ""),"","no");
-           	 }
+            }
         }
 
         //見つからなかった時。エラーページにフォワード。
@@ -159,7 +159,7 @@ public class SuggestServlet extends HttpServlet {
 			if (dishList.size() > 1){
 				for(int i=0 ; i < dishList.size() ; i++) {
 					if(dishList.get(i).getId().equals(id)) {
-						dishList.remove(i);
+						dishList.remove(i);				//dishllistから排除
 						break;
 					}
 				}
@@ -171,7 +171,7 @@ public class SuggestServlet extends HttpServlet {
 			//「id」をresult.jspのidから、上で抽出したidに切り替える
 			id = dish.getId();
 
-			//食材のリストを取得し、
+			//抽出した料理から食材のリスト(foodlist)を取得
 			DFoodDAO DfDao = new DFoodDAO();
 			List<Food> foodList = DfDao.select2(dish);
 
