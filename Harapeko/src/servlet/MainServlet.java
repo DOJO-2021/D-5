@@ -33,12 +33,4 @@ public class MainServlet extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
 
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		// 条件入力ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/SuggestServlet");
-		dispatcher.forward(request, response);
-	}
-
 }

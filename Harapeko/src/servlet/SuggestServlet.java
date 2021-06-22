@@ -149,7 +149,7 @@ public class SuggestServlet extends HttpServlet {
 		else {
 			if (dishList.size() > 1){
 				for(int i=0 ; i < dishList.size() ; i++) {
-					if(dishList.get(i).getId().equals(id)) {
+					if(dishList.get(i).getId().equals(id)) {	//dishlistのiのidと今表示している料理のidの判定
 						dishList.remove(i);				//dishllistから排除
 						break;
 					}
@@ -159,19 +159,21 @@ public class SuggestServlet extends HttpServlet {
 			//ランダムにひとつを抽出
 			Dish dish = dishList.get((int)(Math.random() * dishList.size()));
 
-			//「id」をresult.jspのidから、上で抽出したidに切り替える
+			//「id」をresult.jspで表示していた料理のidから、次の画面で表示する料理のidに切り替える
 			id = dish.getId();
 
 			//抽出した料理から食材のリスト(foodlist)を取得
 			DFoodDAO DfDao = new DFoodDAO();
 			List<Food> foodList = DfDao.select2(dish);
 
+			//Dishのセッター
 			for(Food foods : foodList) {
 				dish.setFoodList(foods);
 			}
 
 			//リクエストスコープにセットしてリザルトに送るぜベイベー
-			request.setAttribute("dish", dish);
+			request.setAttribute("dish", dish);		//
+			//検索条件
 			request.setAttribute("id", id);
 			request.setAttribute("food", food);
 			request.setAttribute("cal", cal);
