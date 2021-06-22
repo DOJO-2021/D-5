@@ -13,7 +13,8 @@
 <main>
 <div class="wrapper">
 <button onclick="javascript:history.back();" class="button2">前の画面に戻る</button>
-<h2>今日のメニューはこれだ！</h2>
+<h2>${comment}</h2>
+
 <!-- セッションスコープから緯度経度の挿入 -->
 <div id="lat" hidden>${lat}</div>
 <div id="lng" hidden>${lng}</div>

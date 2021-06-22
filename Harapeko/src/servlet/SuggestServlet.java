@@ -137,16 +137,7 @@ public class SuggestServlet extends HttpServlet {
         	 //気まぐれOFFの通常の処理です
             peComment = "普通に検索するならC〇〇kpadとかで良くないペコか...？";
 
-
-            //suggest.jsp用？
-            //   if(id.equals("")) {
-            if(id == null) {
-				dishList = DsDao.select(new Dish("", "", "", genre,cal, diff, ""),food,hot_cold);
-            }
-          //result.jspの再提案用？
-            else {
-				dishList = DsDao.select(new Dish(id, "", "", "",100000, "", ""),"","no");
-            }
+			dishList = DsDao.select(new Dish("", "", "", genre,cal, diff, ""),food,hot_cold);
         }
 
         //見つからなかった時。エラーページにフォワード。

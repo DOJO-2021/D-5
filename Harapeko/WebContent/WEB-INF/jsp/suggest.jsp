@@ -13,8 +13,8 @@
 
 <main>
 	<div class="wrapper">
-		<a href="/Harapeko/MainServlet">メインへ戻る</a>
-		<h2>どんな気分？</h2>
+		<a href="/Harapeko/MainServlet" class="main_btn">メインへ戻る</a>
+		<h2>どんな気分ペコ？</h2>
 		<!-- セッションスコープから緯度経度の挿入 -->
 		<div id="lat"  hidden>${lat}</div>
 		<div id="lng"  hidden>${lng}</div>

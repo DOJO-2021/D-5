@@ -3,7 +3,6 @@
     <link rel="styleSheet" href="/Harapeko/css/common.css">
 	<footer class="footer">
 	<a><img alt="はらぺこ。" src="/Harapeko/images/footer.jpg"></a>
-		<br>
 		<p>&copy; 2021 ※※主義</p>
 	</footer>
 </body>
