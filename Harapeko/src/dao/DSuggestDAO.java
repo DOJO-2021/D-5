@@ -37,9 +37,10 @@ public class DSuggestDAO {
 			//SQL文を準備する。
 			//２行目ではjoinではなくwhere文を用いた結合をしている。
 			//３行目はSuggest.jspの条件選択に該当する
-			String sql = "select distinct md.dish_id, md.dish_name, md.img_path, md.dish_genre, md.difficulty, md.cal, md.url FROM dish_details as dd, m_dish as md, m_food as mf"
-					+ " where dd.dish_id = md.dish_id AND dd.food_id = mf.food_id"
-					+ " and md.CAL <= ? and md.DISH_GENRE like ? and md.DIFFICULTY like ? and mf.food_id like ? and md.dish_id like ?"
+			String sql = "SELECT distinct md.dish_id, md.dish_name, md.img_path, md.dish_genre, md.difficulty, md.cal, md.url"
+					+ " FROM dish_details AS dd, m_dish AS md, m_food AS mf"
+					+ " WHERE dd.dish_id = md.dish_id AND dd.food_id = mf.food_id"
+					+ " and md.CAL <= ? and md.DISH_GENRE like ? and md.difficulty like ? and mf.food_id like ? and md.dish_id like ?"
 					+ aaa +";";
 
 			//プリペアードステートメントの準備

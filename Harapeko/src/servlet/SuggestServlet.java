@@ -137,16 +137,7 @@ public class SuggestServlet extends HttpServlet {
         	 //気まぐれOFFの通常の処理です
             peComment = "普通に検索するならC〇〇kpadとかで良くないペコか...？";
 
-
-            //suggest.jsp用？
-            //   if(id.equals("")) {
-            if(id == null) {
-				dishList = DsDao.select(new Dish("", "", "", genre,cal, diff, ""),food,hot_cold);
-            }
-          //result.jspの再提案用？
-            else {
-				dishList = DsDao.select(new Dish(id, "", "", "",100000, "", ""),"","no");
-            }
+			dishList = DsDao.select(new Dish("", "", "", genre,cal, diff, ""),food,hot_cold);
         }
 
         //見つからなかった時。エラーページにフォワード。
@@ -158,7 +149,7 @@ public class SuggestServlet extends HttpServlet {
 		else {
 			if (dishList.size() > 1){
 				for(int i=0 ; i < dishList.size() ; i++) {
-					if(dishList.get(i).getId().equals(id)) {
+					if(dishList.get(i).getId().equals(id)) {	//dishlistのiのidと今表示している料理のidの判定
 						dishList.remove(i);				//dishllistから排除
 						break;
 					}
@@ -168,19 +159,22 @@ public class SuggestServlet extends HttpServlet {
 			//ランダムにひとつを抽出
 			Dish dish = dishList.get((int)(Math.random() * dishList.size()));
 
-			//「id」をresult.jspのidから、上で抽出したidに切り替える
+			//「id」をresult.jspで表示していた料理のidから、次の画面で表示する料理のidに切り替える
 			id = dish.getId();
 
 			//抽出した料理から食材のリスト(foodlist)を取得
 			DFoodDAO DfDao = new DFoodDAO();
 			List<Food> foodList = DfDao.select2(dish);
 
+			//Dishのセッター。DishBeanの完成
 			for(Food foods : foodList) {
 				dish.setFoodList(foods);
 			}
 
 			//リクエストスコープにセットしてリザルトに送るぜベイベー
+			//このインスタンスで料理情報と食材を送っている
 			request.setAttribute("dish", dish);
+			//検索条件を送る
 			request.setAttribute("id", id);
 			request.setAttribute("food", food);
 			request.setAttribute("cal", cal);

@@ -1,0 +1,314 @@
+
+
+Select * from (m_dish as md INNER JOIN dish_details as dd using (dish_id)) inner join m_food as mf using (food_id);
+select * from (dish_details as dd inner join m_dish as md using (dish_id)) inner join m_food as mf using (food_id);
+
+select  distinct md.dish_id,md.dish_name,md.img_path,md.dish_genre,md.difficulty,md.cal,md.url from (dish_details as dd inner join m_dish as md using (dish_id)) inner join m_food as mf using (food_id);
+
+
+
+create table m_dish (
+dish_id char(5) primary key,
+dish_name varchar(20) not null,
+img_path varchar(40) not null,
+dish_genre varchar(20) not null,
+hot BOOLEAN NOT NULL DEFAULT 0,
+general BOOLEAN NOT NULL DEFAULT 0,
+cold BOOLEAN NOT NULL DEFAULT 0,
+cal int not null,
+difficulty char(6) not null,
+url varchar(200) not null
+);
+
+create table m_food (
+food_id char(5) primary key,
+food_name varchar(40) not null,
+judge BOOLEAN NOT NULL DEFAULT 0
+);
+
+create table dish_details(
+dish_id char(5),
+food_id char(5),
+PRIMARY KEY(dish_id,food_id)
+);
+
+
+
+
+insert into M_DISH values(
+'d1',
+'唐揚げ',
+'/c/preides/workspace/Harapeko/images/唐揚げ.jpg',
+'和',
+'1143',
+'★☆☆',
+'https://www.kurashiru.com/recipes/6ef01aef-c9e9-490b-b9d7-44fddcb09922'
+);
+
+
+
+
+
+
+insert into dish_details values ('d1', 'f1');
+insert into dish_details values ('d1', 'f2');
+insert into dish_details values ('d1', 'f3');
+insert into dish_details values ('d1', 'f4');
+insert into dish_details values ('d1', 'f5');
+insert into dish_details values ('d1', 'f6');
+insert into dish_details values ('d1', 'f7');
+insert into dish_details values ('d1', 'f8');
+insert into dish_details values ('d1', 'f9');
+insert into dish_details values ('d1', 'f10');
+insert into dish_details values ('d1', 'f23');
+
+insert into dish_details values ('d2', 'f24');
+insert into dish_details values ('d2', 'f12');
+insert into dish_details values ('d2', 'f2');
+insert into dish_details values ('d2', 'f5');
+insert into dish_details values ('d2', 'f13');
+insert into dish_details values ('d2', 'f4');
+insert into dish_details values ('d2', 'f6');
+
+insert into dish_details values ('d3', 'f25');
+insert into dish_details values ('d3', 'f9');
+insert into dish_details values ('d3', 'f26');
+insert into dish_details values ('d3', 'f2');
+insert into dish_details values ('d3', 'f4');
+insert into dish_details values ('d3', 'f5');
+insert into dish_details values ('d3', 'f11');
+insert into dish_details values ('d3', 'f13');
+insert into dish_details values ('d3', 'f14');
+
+insert into dish_details values ('d4', 'f27');
+insert into dish_details values ('d4', 'f15');
+insert into dish_details values ('d4', 'f12');
+insert into dish_details values ('d4', 'f28');
+insert into dish_details values ('d4', 'f16');
+insert into dish_details values ('d4', 'f1');
+
+insert into dish_details values ('d5', 'f29');
+insert into dish_details values ('d5', 'f15');
+insert into dish_details values ('d5', 'f12');
+insert into dish_details values ('d5', 'f28');
+insert into dish_details values ('d5', 'f1');
+insert into dish_details values ('d5', 'f16');
+
+insert into dish_details values ('d6', 'f30');
+insert into dish_details values ('d6', 'f31');
+insert into dish_details values ('d6', 'f32');
+insert into dish_details values ('d6', 'f28');
+insert into dish_details values ('d6', 'f16');
+insert into dish_details values ('d6', 'f15');
+insert into dish_details values ('d6', 'f17');
+insert into dish_details values ('d6', 'f4');
+insert into dish_details values ('d6', 'f1');
+
+insert into dish_details values ('d7', 'f33');
+insert into dish_details values ('d7', 'f34');
+insert into dish_details values ('d7', 'f35');
+insert into dish_details values ('d7', 'f36');
+insert into dish_details values ('d7', 'f37');
+insert into dish_details values ('d7', 'f18');
+insert into dish_details values ('d7', 'f19');
+insert into dish_details values ('d7', 'f20');
+insert into dish_details values ('d7', 'f21');
+insert into dish_details values ('d7', 'f9');
+insert into dish_details values ('d7', 'f28');
+
+insert into dish_details values ('d8', 'f31');
+insert into dish_details values ('d8', 'f34');
+insert into dish_details values ('d8', 'f21');
+insert into dish_details values ('d8', 'f16');
+insert into dish_details values ('d8', 'f28');
+insert into dish_details values ('d8', 'f15');
+insert into dish_details values ('d8', 'f22');
+
+insert into dish_details values ('d9', 'f38');
+insert into dish_details values ('d9', 'f35');
+insert into dish_details values ('d9', 'f32');
+insert into dish_details values ('d9', 'f28');
+insert into dish_details values ('d9', 'f39');
+insert into dish_details values ('d9', 'f40');
+insert into dish_details values ('d9', 'f21');
+insert into dish_details values ('d9', 'f8');
+insert into dish_details values ('d9', 'f9');
+
+insert into dish_details values ('d10', 'f41');
+insert into dish_details values ('d10', 'f9');;
+insert into dish_details values ('d10', 'f20');
+insert into dish_details values ('d10', 'f34');
+insert into dish_details values ('d10', 'f42');
+insert into dish_details values ('d10', 'f3');
+insert into dish_details values ('d10', 'f31');
+insert into dish_details values ('d10', 'f15');
+insert into dish_details values ('d10', 'f43');
+insert into dish_details values ('d10', 'f39');
+insert into dish_details values ('d10', 'f13');
+insert into dish_details values ('d10', 'f5');
+insert into dish_details values ('d10', 'f44');
+insert into dish_details values ('d10', 'f45');
+insert into dish_details values ('d10', 'f21');
+insert into dish_details values ('d10', 'f12');
+insert into dish_details values ('d10', 'f32');
+insert into dish_details values ('d10', 'f40');
+
+insert into dish_details values ('d11', 'f46');
+insert into dish_details values ('d11', 'f9');
+insert into dish_details values ('d11', 'f23');
+insert into dish_details values ('d11', 'f47');
+insert into dish_details values ('d11', 'f34');
+insert into dish_details values ('d11', 'f48');
+insert into dish_details values ('d11', 'f12');
+insert into dish_details values ('d11', 'f32');
+insert into dish_details values ('d11', 'f39');
+insert into dish_details values ('d11', 'f15');
+insert into dish_details values ('d11', 'f21');
+insert into dish_details values ('d11', 'f40');
+
+insert into dish_details values ('d12', 'f12');
+insert into dish_details values ('d12', 'f49');
+insert into dish_details values ('d12', 'f20');
+insert into dish_details values ('d12', 'f9');
+insert into dish_details values ('d12', 'f50');
+insert into dish_details values ('d12', 'f51');
+insert into dish_details values ('d12', 'f35');
+insert into dish_details values ('d12', 'f34');
+insert into dish_details values ('d12', 'f40');
+									
+insert into dish_details values ('d13', 'f29');
+insert into dish_details values ('d13', 'f4');
+insert into dish_details values ('d13', 'f2');
+insert into dish_details values ('d13', 'f3');
+insert into dish_details values ('d13', 'f17');
+insert into dish_details values ('d13', 'f42');
+insert into dish_details values ('d13', 'f34');
+insert into dish_details values ('d13', 'f30');
+insert into dish_details values ('d13', 'f52');
+insert into dish_details values ('d13', 'f5');
+insert into dish_details values ('d13', 'f13');
+insert into dish_details values ('d13', 'f7');
+insert into dish_details values ('d13', 'f18');
+insert into dish_details values ('d13', 'f17');
+insert into dish_details values ('d13', 'f1');
+
+insert into dish_details values ('d14', 'f53');
+insert into dish_details values ('d14', 'f4');
+insert into dish_details values ('d14', 'f3');
+insert into dish_details values ('d14', 'f6');
+insert into dish_details values ('d14', 'f15');
+insert into dish_details values ('d14', 'f2');
+insert into dish_details values ('d14', 'f54');
+insert into dish_details values ('d14', 'f55');
+insert into dish_details values ('d14', 'f18');
+insert into dish_details values ('d14', 'f7');
+insert into dish_details values ('d14', 'f5');
+insert into dish_details values ('d14', 'f13');
+insert into dish_details values ('d14', 'f17');
+insert into dish_details values ('d14', 'f1');
+
+insert into dish_details values ('d15', 'f56');
+insert into dish_details values ('d15', 'f57');
+insert into dish_details values ('d15', 'f30');
+insert into dish_details values ('d15', 'f54');
+insert into dish_details values ('d15', 'f58');
+insert into dish_details values ('d15', 'f4');
+insert into dish_details values ('d15', 'f5');
+insert into dish_details values ('d15', 'f2');
+insert into dish_details values ('d15', 'f55');
+insert into dish_details values ('d15', 'f6');
+
+insert into dish_details values ('d16', 'f24');
+insert into dish_details values ('d16', 'f30');
+insert into dish_details values ('d16', 'f59');
+insert into dish_details values ('d16', 'f8');
+insert into dish_details values ('d16', 'f9');
+insert into dish_details values ('d16', 'f3');
+insert into dish_details values ('d16', 'f4');
+insert into dish_details values ('d16', 'f10');
+insert into dish_details values ('d16', 'f60');
+insert into dish_details values ('d16', 'f5');
+insert into dish_details values ('d16', 'f13');
+insert into dish_details values ('d16', 'f7');
+insert into dish_details values ('d16', 'f6');
+
+insert into dish_details values ('d17', 'f31');
+insert into dish_details values ('d17', 'f15');
+insert into dish_details values ('d17', 'f57');
+insert into dish_details values ('d17', 'f61');
+insert into dish_details values ('d17', 'f2');
+insert into dish_details values ('d17', 'f3');
+insert into dish_details values ('d17', 'f13');
+insert into dish_details values ('d17', 'f5');
+insert into dish_details values ('d17', 'f60');
+insert into dish_details values ('d17', 'f6');
+insert into dish_details values ('d17', 'f62');
+insert into dish_details values ('d17', 'f17');
+insert into dish_details values ('d17', 'f1');
+
+insert into dish_details values ('d18', 'f63');
+insert into dish_details values ('d18', 'f64');
+insert into dish_details values ('d18', 'f56');
+insert into dish_details values ('d18', 'f34');
+insert into dish_details values ('d18', 'f61');
+insert into dish_details values ('d18', 'f65');
+insert into dish_details values ('d18', 'f28');
+insert into dish_details values ('d18', 'f5');
+insert into dish_details values ('d18', 'f66');
+insert into dish_details values ('d18', 'f67');
+insert into dish_details values ('d18', 'f3');
+insert into dish_details values ('d18', 'f9');
+
+insert into dish_details values ('d19', 'f33');
+insert into dish_details values ('d19', 'f23');
+insert into dish_details values ('d19', 'f54');
+insert into dish_details values ('d19', 'f2');
+insert into dish_details values ('d19', 'f3');
+insert into dish_details values ('d19', 'f7');
+insert into dish_details values ('d19', 'f74');
+insert into dish_details values ('d19', 'f13');
+insert into dish_details values ('d19', 'f52');
+insert into dish_details values ('d19', 'f60');
+insert into dish_details values ('d19', 'f5');
+insert into dish_details values ('d19', 'f55');
+
+insert into dish_details values ('d20', 'f68');
+insert into dish_details values ('d20', 'f69');
+insert into dish_details values ('d20', 'f70');
+insert into dish_details values ('d20', 'f71');
+insert into dish_details values ('d20', 'f72');
+insert into dish_details values ('d20', 'f73');
+insert into dish_details values ('d20', 'f74');
+insert into dish_details values ('d20', 'f56');
+insert into dish_details values ('d20', 'f53');
+insert into dish_details values ('d20', 'f61');
+insert into dish_details values ('d20', 'f3');
+insert into dish_details values ('d20', 'f1');
+insert into dish_details values ('d20', 'f60');
+insert into dish_details values ('d20', 'f7');
+
+insert into dish_details values ('d21', 'f33');
+insert into dish_details values ('d21', 'f23');
+insert into dish_details values ('d21', 'f34');
+insert into dish_details values ('d21', 'f75');
+insert into dish_details values ('d21', 'f2');
+insert into dish_details values ('d21', 'f3');
+insert into dish_details values ('d21', 'f76');
+insert into dish_details values ('d21', 'f9');
+insert into dish_details values ('d21', 'f8');
+insert into dish_details values ('d21', 'f1');
+insert into dish_details values ('d21', 'f77');
+
+insert into dish_details values ('d22', 'f33');
+insert into dish_details values ('d22', 'f65');
+insert into dish_details values ('d22', 'f6');
+insert into dish_details values ('d22', 'f9');
+insert into dish_details values ('d22', 'f78');
+insert into dish_details values ('d22', 'f48');
+insert into dish_details values ('d22', 'f79');
+insert into dish_details values ('d22', 'f40');
+insert into dish_details values ('d22', 'f80');
+
+
+
+

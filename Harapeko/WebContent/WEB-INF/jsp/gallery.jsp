@@ -22,6 +22,7 @@
 
 	<!-- GallerySerlvletから食べ物リストを取得し、idと画像を表示 -->
 		<div id="gallery" class="gallery">
+		<!-- let i=1　ということ -->
 			<c:set var="i" value="1" />
 			<c:forEach var="e" items="${List}">
 				<div class="menus">
