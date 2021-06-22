@@ -166,14 +166,15 @@ public class SuggestServlet extends HttpServlet {
 			DFoodDAO DfDao = new DFoodDAO();
 			List<Food> foodList = DfDao.select2(dish);
 
-			//Dishのセッター
+			//Dishのセッター。DishBeanの完成
 			for(Food foods : foodList) {
 				dish.setFoodList(foods);
 			}
 
 			//リクエストスコープにセットしてリザルトに送るぜベイベー
-			request.setAttribute("dish", dish);		//
-			//検索条件
+			//このインスタンスで料理情報と食材を送っている
+			request.setAttribute("dish", dish);
+			//検索条件を送る
 			request.setAttribute("id", id);
 			request.setAttribute("food", food);
 			request.setAttribute("cal", cal);
