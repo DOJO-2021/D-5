@@ -238,7 +238,7 @@
 									<tr>
 										<th class="title2">カロリー</th>
 										<td style="border:none;">
-											<div>～<input type="text" name="cal" pattern="[1-9][0-9]*">cal</div>
+											<div>～<input type="text" name="cal" pattern="[1-9][0-9]*">kcal</div>
 										</td>
 									</tr>
 									<tr style="border:none;">

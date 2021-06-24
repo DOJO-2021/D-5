@@ -85,7 +85,7 @@
       <tr>
         <th>作り方URL</th>
          <td class="td2">
-          <label><a href="${dish.url}">${dish.url}</a>
+          <label><a href="${dish.url}" target=”_new”>${dish.url}</a>
           </label>
          </td>
       </tr>
