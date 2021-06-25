@@ -61,7 +61,7 @@ public class SuggestServlet extends HttpServlet {
 		String genre = request.getParameter("genre");
 		String feeling = request.getParameter("feeling");			//気まぐれスイッチ
 		String id = request.getParameter("id");						//resultで表示したidを取得（再提案で使用、suggesstではnull）
-		if(request.getParameter("cal") == "") {						//入力がない場合はカロリー制限なしってこと
+		if(request.getParameter("cal") == "" || request.getParameter("cal").length() >= 6) {						//入力がない場合はカロリー制限なしってこと
 			cal = 100000;
 		}
 		else {

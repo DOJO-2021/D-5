@@ -4,7 +4,7 @@
 <body>
 	<header class="header">
 		<div class="logo">
-			<h1><img alt="はらぺこ。" src="/Harapeko/images/logo1_2.jpg"></h1>
+			<h1><a href="/Harapeko/MainServlet"><img alt="はらぺこ。" src="/Harapeko/images/logo1_2.jpg"></a></h1>
 		</div>
 	</header>
 
