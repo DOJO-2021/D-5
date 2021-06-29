@@ -8,7 +8,7 @@
 	</header>
 <main>
 <div class="wrapper">
-	<button onclick="javascript:history.back();">前の画面に戻る</button>
+	<button onclick="javascript:history.back();" class="button2">前の画面に戻る</button>
 	<h2 class="heading">検索結果</h2>
 
 	<div class="recommend">
@@ -16,7 +16,7 @@
 	</div>
 
 	<div class="peko">
-		<img alt="はらペコーぬ" src="/Harapeko/images/harapekonu1.jpg">
+		<img alt="はらペコーぬ" src="/Harapeko/images/harapekonu5.jpg">
 	</div>
 </div>
 </main>
