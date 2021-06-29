@@ -5,5 +5,5 @@
 <head>
 	<meta charset="UTF-8">
 	<title>はらペコ。</title>
-	<link rel="icon" type="image/vnd.microsoft.icon" href="/Harapeko/images/harapekonu1.jpg">
+	<link rel="icon" type="image/vnd.microsoft.icon" href="/Harapeko/images/harapekonu5.jpg">
 	<link rel="stylesheet" href="/Harapeko/css/common.css">
